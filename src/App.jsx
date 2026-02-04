@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="w-full h-screen">
-      <Navbar />
+    <div>
+      {/* <Navbar /> */}
       <HeroSection />
     </div>
   );
