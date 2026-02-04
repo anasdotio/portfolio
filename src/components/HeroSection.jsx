@@ -64,16 +64,23 @@ const HeroSection = () => {
       {/* CONTENT */}
       <div className="relative z-10 min-h-screen  px-6 ">
         <Navbar />
-        <div>
-          <h1>Anas Khan</h1>
-          <p>Backend/Full-Stack Developer</p>
-          <p>
-            Building microservice-based systems with Node.js, messaging queues,
-            and clean architecture.
+        <div className="mt-6">
+          <h1 className="text-4xl">Anas Khan</h1>
+          <p className="text-2xl">Backend/Full-Stack Developer</p>
+          <p className="mt-4 text-center">
+            Building{" "}
+            <span className="font-bold text-orange-400">
+              microservice-based systems
+            </span>{" "}
+            with Node.js, messaging queues, and clean architecture.
           </p>
 
-          <div>
-            <button>View Projects</button>
+          <div className="flex flex-col mt-6 items-center">
+            <div className="rounded-md bg-linear-to-r from-white/30 via-orange-400 to-white/30 p-[.7px]">
+              <button className="px-4 py-2 bg-black/80 rounded-md">
+                View Projects
+              </button>
+            </div>
             <button>Download Resume</button>
           </div>
         </div>
