@@ -1,11 +1,12 @@
+import { Menu } from "lucide-react";
 import React from "react";
 
 const Navbar = () => {
   const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
 
   return (
-    <div className="w-fit mx-auto mt-6">
-      <div className="flex gap-8 bg-black/80 px-6 py-3 rounded-md">
+    <div className="w-fit sm:mx-auto mt-6 p-[.7px] rounded-md bg-linear-to-r from-white/30 via-orange-400 to-white/30">
+      <div className="sm:flex gap-8 bg-black/80 px-6 py-3 rounded-md hidden ">
         {navItems.map((item) => (
           <div
             key={item}
@@ -43,6 +44,10 @@ const Navbar = () => {
             </span>
           </div>
         ))}
+      </div>
+      <div className="flex justify-between bg-black/80 px-6 py-3 rounded-md sm:hidden w-80">
+        <h1>Anas</h1>
+        <Menu />
       </div>
     </div>
   );
