@@ -5,7 +5,7 @@ const Navbar = () => {
   const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
 
   return (
-    <div className="w-full sm:w-fit sm:mx-auto mt-6 p-[.7px] rounded-md bg-linear-to-r from-white/30 via-orange-400 to-white/30">
+    <div className="w-full sm:w-fit sm:mx-auto mt-6 p-[.8px] rounded-md bg-linear-to-r from-white/30 via-orange-400 to-white/30">
       <div className="sm:flex gap-8 bg-black/80 px-6 py-3 rounded-md hidden ">
         {navItems.map((item) => (
           <div
