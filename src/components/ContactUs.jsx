@@ -10,10 +10,10 @@ const ContactUs = () => {
       </div>
 
       {/* Form Container */}
-      <div className="max-w-3xl mx-auto bg-zinc-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-8">
-        <form className="space-y-6">
-          {/* Name */}
-          <div>
+      {/* <div className="max-w-3xl mx-auto bg-zinc-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-8">
+        <form className="space-y-6"> */}
+      {/* Name */}
+      {/* <div>
             <label className="block text-sm text-gray-400 mb-2">
               Your Name
             </label>
@@ -22,10 +22,10 @@ const ContactUs = () => {
               placeholder="Enter your name"
               className="w-full px-4 py-3 bg-black/70 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 transition-colors"
             />
-          </div>
+          </div> */}
 
-          {/* Email */}
-          <div>
+      {/* Email */}
+      {/* <div>
             <label className="block text-sm text-gray-400 mb-2">
               Your Email
             </label>
@@ -34,20 +34,20 @@ const ContactUs = () => {
               placeholder="Enter your email"
               className="w-full px-4 py-3 bg-black/70 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 transition-colors"
             />
-          </div>
+          </div> */}
 
-          {/* Message */}
-          <div>
+      {/* Message */}
+      {/* <div>
             <label className="block text-sm text-gray-400 mb-2">Message</label>
             <textarea
               rows="5"
               placeholder="Write your message..."
               className="w-full px-4 py-3 bg-black/70 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 transition-colors resize-none"
             ></textarea>
-          </div>
+          </div> */}
 
-          {/* Button */}
-          <div className="flex justify-center">
+      {/* Button */}
+      {/* <div className="flex justify-center">
             <div className="relative group rounded-xl p-[2px] bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 w-fit">
               <button
                 type="submit"
@@ -58,7 +58,7 @@ const ContactUs = () => {
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
     </section>
   );
 };
