@@ -2,6 +2,8 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Skill from "./components/Skill";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
         <HeroSection />
         <About />
         <Skill />
+        <ContactUs />
+        <Footer />
       </div>
     </section>
   );
