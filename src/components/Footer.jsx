@@ -22,16 +22,25 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
               Quick Links
             </h3>
-            <ul className="mt-4 space-y-2 text-gray-400 text-sm">
-              <li className="hover:text-orange-400 transition-colors cursor-pointer">
+            <ul className="mt-4 flex flex-col space-y-2 text-gray-400 text-sm">
+              <a
+                href="#about"
+                className="hover:text-orange-400 transition-colors cursor-pointer"
+              >
                 About
-              </li>
-              <li className="hover:text-orange-400 transition-colors cursor-pointer">
+              </a>
+              <a
+                href="#skill"
+                className="hover:text-orange-400 transition-colors cursor-pointer"
+              >
                 Skills
-              </li>
-              <li className="hover:text-orange-400 transition-colors cursor-pointer">
+              </a>
+              <a
+                href="#projects"
+                className="hover:text-orange-400 transition-colors cursor-pointer"
+              >
                 Products
-              </li>
+              </a>
             </ul>
           </div>
 

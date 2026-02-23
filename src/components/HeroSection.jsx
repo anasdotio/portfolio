@@ -1,4 +1,4 @@
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile.png";
 
 const HeroSection = () => {
   return (
@@ -36,7 +36,7 @@ const HeroSection = () => {
           <img
             src={profileImage} // <-- replace with your image
             alt="Anas Khan"
-            className="relative w-64 h-64 object-cover rounded-full border border-white/10 shadow-lg"
+            className="relative w-64 h-64 object-cover object-top  rounded-full  border border-white/10 shadow-lg"
           />
         </div>
       </div>

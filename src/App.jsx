@@ -4,6 +4,7 @@ import About from "./components/About";
 import Skill from "./components/Skill";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
+import Education from "./components/Education";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <HeroSection />
         <About />
         <Skill />
+        <Education />
         <ContactUs />
         <Footer />
       </div>

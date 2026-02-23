@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className=" text-white mt-15">
+    <section className=" text-white mt-15" id="about">
       <div className="text-center relative w-fit mx-auto mb-12">
         <h1 className="text-3xl font-semibold tracking-wide">About Me</h1>
         <div className="absolute bottom-0 w-full h-0.5 bg-linear-to-r from-transparent via-orange-400 to-transparent"></div>
