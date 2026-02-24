@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import SocialCard from "./Card/SocialCard";
 
 const Footer = () => {
   return (
@@ -50,24 +51,15 @@ const Footer = () => {
               Connect
             </h3>
             <div className="flex justify-center md:justify-start gap-4 mt-4">
-              <a
-                href="https://github.com/anasdotio"
-                className="p-3 rounded-xl bg-zinc-900 border border-white/10 hover:border-orange-500/40 hover:shadow-[0_0_20px_rgba(255,106,0,0.3)] transition-all"
-              >
-                <Github />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/anaskhan12/"
-                className="p-3 rounded-xl bg-zinc-900 border border-white/10 hover:border-orange-500/40 hover:shadow-[0_0_20px_rgba(255,106,0,0.3)] transition-all"
-              >
-                <Linkedin />
-              </a>
-              <a
-                href="mailto:anaskhan.cs01@gmail.com"
-                className="p-3 rounded-xl bg-zinc-900 border border-white/10 hover:border-orange-500/40 hover:shadow-[0_0_20px_rgba(255,106,0,0.3)] transition-all"
-              >
-                <Mail />
-              </a>
+              <SocialCard
+                link="https://github.com/anaskhan12"
+                icon={<Github />}
+              />
+              <SocialCard
+                link="https://www.linkedin.com/in/anas-khan-0b8b6b218/"
+                icon={<Linkedin />}
+              />
+              <SocialCard link="mailto:6e2bS@example.com" icon={<Mail />} />
             </div>
           </div>
         </div>

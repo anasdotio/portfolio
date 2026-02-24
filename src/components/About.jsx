@@ -1,12 +1,12 @@
-import React from "react";
+import resume from "../../public/Anas-Resume.pdf";
+import SectionTitle from "./Card/SectionTitle";
 
 const About = () => {
   return (
     <section className=" text-white mt-15" id="about">
-      <div className="text-center relative w-fit mx-auto mb-12">
-        <h1 className="text-3xl font-semibold tracking-wide">About Me</h1>
-        <div className="absolute bottom-0 w-full h-0.5 bg-linear-to-r from-transparent via-orange-400 to-transparent"></div>
-      </div>
+      {/* Section title */}
+      <SectionTitle title="About Me" />
+
       <div className=" max-w-3xl mx-auto mt-3 text-justify bg-zinc-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-6 leading-relaxed text-gray-300  md:text-center">
         <p>
           I’m a{" "}
@@ -24,10 +24,17 @@ const About = () => {
           solving real-world problems through thoughtful architecture and
           reliable backend systems.
         </p>
-        <div className="max-w-md mt-4 rounded-md overflow-hidden p-[.8px] bg-animate  mx-auto mt-">
-          <button className="px-4 py-2 bg-black/88 rounded-md w-full ">
+
+        <div className="relative group rounded-xl p-0.5 bg-linear-to-r from-orange-500 via-orange-400 to-orange-500 max-w-md mx-auto mt-4 bg-animate cursor-pointer">
+          <a
+            type="submit"
+            target="_blank"
+            href={resume}
+            rel="noopener noreferrer"
+            className="px-4 py-2 block w-full bg-black rounded-xl transition-all duration-300 group-hover:bg-black/80"
+          >
             Download Resume
-          </button>
+          </a>
         </div>
       </div>
     </section>

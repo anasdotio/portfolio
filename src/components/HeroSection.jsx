@@ -2,14 +2,14 @@ import profileImage from "../assets/profile.png";
 
 const HeroSection = () => {
   return (
-    <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 mt-12 items-center w-full justify-items-between text-white">
+    <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 mt-12 items-center w-full justify-items-between text-white">
       {/* LEFT CONTEXT */}
       <div className="text-center md:text-left">
         <h1 className="text-5xl font-semibold hidden md:block">Anas Khan</h1>
 
         <p className="text-2xl mt-4">Backend / Full-Stack Developer</p>
 
-        <p className="mt-4 text-gray-300 max-w-md">
+        <p className="mt-4 text-gray-300 leading-relaxed mx-auto  md:mx-0 md:text-left max-w-md">
           Building{" "}
           <span className="text-orange-400 font-medium">
             {" "}
@@ -18,7 +18,7 @@ const HeroSection = () => {
           with Node.js, messaging queues, and clean architecture.
         </p>
 
-        <div className="rounded-md overflow-hidden p-[.8px] bg-animate md:max-w-md mt-4">
+        <div className="rounded-md overflow-hidden p-px w-fit mx-auto bg-animate md:w-sm md:mx-0 mt-4">
           <button className="px-4 py-2 bg-black/88 rounded-md w-full">
             View Projects
           </button>
