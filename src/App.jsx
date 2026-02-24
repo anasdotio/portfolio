@@ -8,7 +8,7 @@ import Education from "./components/Education";
 
 const App = () => {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen overflow-hidden bg-white dark:bg-black transition-colors duration-500 px-4">
       {/* SVG BACKGROUND */}
       <svg
         viewBox="0 0 1440 900"
@@ -16,18 +16,47 @@ const App = () => {
         preserveAspectRatio="xMidYMid slice"
       >
         <defs>
-          <radialGradient id="orangeGlow">
+          {/* Light Theme Gradient */}
+          <radialGradient id="orangeGlowLight">
+            <stop offset="0%" stopColor="#fb923c" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#fb923c" stopOpacity="0" />
+          </radialGradient>
+
+          {/* Dark Theme Gradient */}
+          <radialGradient id="orangeGlowDark">
             <stop offset="0%" stopColor="#ff6a00" stopOpacity="0.45" />
             <stop offset="100%" stopColor="#ff6a00" stopOpacity="0" />
           </radialGradient>
         </defs>
 
-        <rect width="100%" height="100%" fill="black" />
-        <circle cx="1100" cy="350" r="420" fill="url(#orangeGlow)" />
+        {/* Background Rectangle */}
+        <rect
+          width="100%"
+          height="100%"
+          className="fill-white dark:fill-black transition-colors duration-500"
+        />
+
+        {/* Glow for Light Mode */}
+        <circle
+          cx="1100"
+          cy="350"
+          r="420"
+          fill="url(#orangeGlowLight)"
+          className="dark:hidden"
+        />
+
+        {/* Glow for Dark Mode */}
+        <circle
+          cx="1100"
+          cy="350"
+          r="420"
+          fill="url(#orangeGlowDark)"
+          className="hidden dark:block"
+        />
       </svg>
 
       {/* CONTENT */}
-      <div className="relative z-10 px-6 min-h-screen">
+      <div className="relative z-10 min-h-screen text-black dark:text-white transition-colors duration-500">
         <Navbar />
         <HeroSection />
         <About />

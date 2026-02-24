@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionTitle = ({ title }) => {
   return (
-    <div className="text-center relative w-fit mx-auto mb-12">
+    <div className="text-center relative w-fit mx-auto mb-12 dark:text-white text-black">
       <h1 className="text-3xl font-semibold tracking-wide">{title}</h1>
 
       {/* Gradient underline */}

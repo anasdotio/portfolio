@@ -1,11 +1,31 @@
-import { Menu } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
+import MobileNavbar from "./Navbar/MobileNabar";
+import Theme from "./button/Theme";
 
 const Navbar = () => {
   const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
 
   return (
-    <div className="w-full sm:w-fit sm:mx-auto mt-6 p-[.8px] rounded-md bg-linear-to-r from-white/30 via-orange-400 to-white/30 text-white">
-      <div className="sm:flex gap-8 bg-black/80 px-6 py-3 rounded-md hidden ">
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.6 } }}
+      className="
+        w-full sm:w-fit sm:mx-auto mt-6 p-[.8px] rounded-md
+        bg-linear-to-r 
+        from-gray-300 via-orange-400 to-gray-300
+        dark:from-white/30 dark:via-orange-400 dark:to-white/30
+        transition-colors duration-300
+      "
+    >
+      <div
+        className="
+          sm:flex items-center gap-8 px-6 py-3 rounded-md hidden
+          bg-white text-gray-800
+          dark:bg-black/80 dark:text-white
+          transition-colors duration-300
+        "
+      >
         {navItems.map((item) => (
           <div
             key={item}
@@ -16,7 +36,6 @@ const Navbar = () => {
               overflow-hidden 
               cursor-pointer 
               group
-              text-white
             "
           >
             {/* Normal Text */}
@@ -34,7 +53,7 @@ const Navbar = () => {
             <span
               className="
                 block
-                text-orange-400
+                text-orange-500 dark:text-orange-400
                 transition-transform duration-300
                 group-hover:-translate-y-full
               "
@@ -43,12 +62,12 @@ const Navbar = () => {
             </span>
           </div>
         ))}
+
+        <Theme />
       </div>
-      <div className="flex justify-between bg-black/80 px-6 py-3 rounded-md sm:hidden w-full">
-        <h1>Anas</h1>
-        <Menu />
-      </div>
-    </div>
+
+      <MobileNavbar />
+    </motion.nav>
   );
 };
 
