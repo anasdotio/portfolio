@@ -4,7 +4,33 @@ import MobileNavbar from "./Navbar/MobileNabar";
 import Theme from "./button/Theme";
 
 const Navbar = () => {
-  const navItems = ["Home", "About", "Skills", "Projects", "Contact"];
+  const navItems = [
+    {
+      id: 1,
+      name: "Home",
+      link: "#home",
+    },
+    {
+      id: 2,
+      name: "About",
+      link: "#about",
+    },
+    {
+      id: 3,
+      name: "Skills",
+      link: "#skill",
+    },
+    {
+      id: 4,
+      name: "Projects",
+      link: "#projects",
+    },
+    {
+      id: 5,
+      name: "Contact",
+      link: "#contact",
+    },
+  ];
 
   return (
     <motion.nav
@@ -28,7 +54,7 @@ const Navbar = () => {
       >
         {navItems.map((item) => (
           <div
-            key={item}
+            key={item.id}
             className="
               relative 
               h-6 
@@ -46,11 +72,12 @@ const Navbar = () => {
                 group-hover:-translate-y-full
               "
             >
-              {item}
+              {item.name}
             </span>
 
             {/* Hover Text */}
-            <span
+            <a
+              href={item.link}
               className="
                 block
                 text-orange-500 dark:text-orange-400
@@ -58,12 +85,12 @@ const Navbar = () => {
                 group-hover:-translate-y-full
               "
             >
-              {item}
-            </span>
+              {item.name}
+            </a>
           </div>
         ))}
 
-        <Theme />
+        <Theme type="desktop" />
       </div>
 
       <MobileNavbar />

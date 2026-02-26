@@ -31,7 +31,7 @@ const MobileNavbar = () => {
         <motion.div
           initial={{ opacity: 0, x: "100%" }}
           animate={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
-          className="absolute top-14 left-0 w-full bg-gray-100 dark:bg-zinc-900/80 dark:backdrop-blur-md border border-white/10 py-8 flex flex-col items-center justify-center gap-8 rounded-md"
+          className="absolute top-14 left-0 w-full bg-gray-100 dark:bg-zinc-900/80 dark:backdrop-blur-md border border-white/10  h-85 flex flex-col items-center py-4 gap-8 rounded-md"
         >
           <a
             href="#home"

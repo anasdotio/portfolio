@@ -24,7 +24,7 @@ const ContactUs = () => {
 
           <div className="space-y-3">
             <input
-              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full focus:outline-none focus:border-orange-400 transition-colors"
+              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full focus:outline-none focus:border-orange-400 transition-colors "
               type="text"
               placeholder="Your Name"
             />
@@ -36,7 +36,7 @@ const ContactUs = () => {
             />
 
             <textarea
-              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full h-38 resize-none focus:outline-none focus:border-orange-400 transition-colors"
+              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full h-38 resize-none focus:outline-none focus:border-orange-400 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-600"
               placeholder="Your Message"
             />
 
@@ -78,12 +78,11 @@ const ContactUs = () => {
               />
 
               <SocialCard
-                link="https://www.linkedin.com/in/anas-thakur-841/"
+                link="https://www.linkedin.com/in/anaskhan12/"
                 icon={<Linkedin />}
               />
-
               <SocialCard
-                link="https://www.instagram.com/anasdotio/"
+                link="https://www.instagram.com/anas_thakur_841/"
                 icon={<Instagram />}
               />
             </div>

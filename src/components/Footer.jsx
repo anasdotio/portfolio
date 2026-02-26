@@ -40,7 +40,7 @@ const Footer = () => {
                 href="#projects"
                 className="hover:text-orange-400 transition-colors cursor-pointer"
               >
-                Products
+                Projects
               </a>
             </ul>
           </div>
@@ -52,14 +52,17 @@ const Footer = () => {
             </h3>
             <div className="flex justify-center md:justify-start gap-4 mt-4">
               <SocialCard
-                link="https://github.com/anaskhan12"
+                link="https://github.com/anasdotio"
                 icon={<Github />}
               />
               <SocialCard
-                link="https://www.linkedin.com/in/anas-khan-0b8b6b218/"
+                link="https://www.linkedin.com/in/anaskhan12/"
                 icon={<Linkedin />}
               />
-              <SocialCard link="mailto:6e2bS@example.com" icon={<Mail />} />
+              <SocialCard
+                link="mailto:anaskhan.cs01@gmail.com"
+                icon={<Mail />}
+              />
             </div>
           </div>
         </div>
