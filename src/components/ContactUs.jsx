@@ -1,8 +1,25 @@
 import { Github, Instagram, Linkedin } from "lucide-react";
 import SocialCard from "./Card/SocialCard";
 import SectionTitle from "./Card/SectionTitle";
+import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from "react-toastify";
 
 const ContactUs = () => {
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    toast.success(
+      "Thanks for your interest! This feature will be available soon.",
+    );
+    reset();
+  };
+
   return (
     <section
       id="contact"
@@ -10,7 +27,10 @@ const ContactUs = () => {
     >
       <SectionTitle title="Contact Me" />
 
-      <form className="p-4 border border-black/10 dark:border-white/10 rounded-2xl w-full bg-white dark:bg-black grid grid-cols-1 md:grid-cols-2 gap-8 transition-colors duration-500">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="p-4 border border-black/10 dark:border-white/10 rounded-2xl w-full bg-white dark:bg-black grid grid-cols-1 md:grid-cols-2 gap-8 transition-colors duration-500"
+      >
         {/* LEFT */}
         <div>
           <div className="mb-5">
@@ -23,22 +43,48 @@ const ContactUs = () => {
           </div>
 
           <div className="space-y-3">
-            <input
-              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full focus:outline-none focus:border-orange-400 transition-colors "
-              type="text"
-              placeholder="Your Name"
-            />
+            <div className="space-y-1">
+              <input
+                className={`bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full ${errors?.name && "focus:border-red-500"} focus:outline-none focus:border-orange-400 transition-colors `}
+                type="text"
+                placeholder="Your Name"
+                {...register("name", {
+                  required: { value: true, message: "Name is required" },
+                })}
+              />
+              {errors?.name && (
+                <p className="text-sm text-red-500">{errors.name.message}</p>
+              )}
+            </div>
+            <div className="space-y-1">
+              <input
+                className={`bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full ${errors?.name && "focus:border-red-500"} focus:outline-none focus:border-orange-400 transition-colors `}
+                type="text"
+                placeholder="Your Email"
+                {...register("email", {
+                  required: { value: true, message: "Email is required" },
+                })}
+              />
+              {errors?.email && (
+                <p className="text-sm text-red-500">{errors?.email?.message}</p>
+              )}
+            </div>
 
-            <input
-              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full focus:outline-none focus:border-orange-400 transition-colors"
-              type="text"
-              placeholder="Your Email"
-            />
+            <div>
+              <textarea
+                className={`bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full h-38 ${errors?.message && "focus:border-red-500"} resize-none focus:outline-none focus:border-orange-400 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-600`}
+                placeholder="Your Message"
+                {...register("message", {
+                  required: { value: true, message: "Message is required" },
+                })}
+              />
 
-            <textarea
-              className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full h-38 resize-none focus:outline-none focus:border-orange-400 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-600"
-              placeholder="Your Message"
-            />
+              {errors?.message && (
+                <p className="text-sm text-red-500">
+                  {errors?.message?.message}
+                </p>
+              )}
+            </div>
 
             <div className="flex justify-center">
               <div className="relative group rounded-xl p-0.5 bg-linear-to-r from-orange-500 via-orange-400 to-orange-500 w-full cursor-pointer">
@@ -49,6 +95,7 @@ const ContactUs = () => {
                   Send Message
                 </button>
               </div>
+              <ToastContainer />
             </div>
           </div>
         </div>
