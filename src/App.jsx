@@ -5,6 +5,7 @@ import Skill from "./components/Skill";
 import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import Education from "./components/Education";
+import ProjectSection from "./components/ProjectSection";
 
 const App = () => {
   return (
@@ -61,6 +62,7 @@ const App = () => {
         <HeroSection />
         <About />
         <Skill />
+        <ProjectSection />
         <Education />
         <ContactUs />
         <Footer />
