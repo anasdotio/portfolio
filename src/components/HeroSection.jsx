@@ -1,56 +1,93 @@
 import profileImage from "../assets/profile.png";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(imageRef.current, {
+      y: -10,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
     <div
       id="home"
       className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 mt-12 items-center text-white px-4"
     >
       {/* LEFT CONTENT */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-center dark:text-white text-black md:text-left"
-      >
-        <h1 className="text-4xl hidden md:text-5xl md:block font-semibold">
+      <div className="text-center dark:text-white text-black md:text-left">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-5xl font-semibold"
+        >
           Anas Khan
-        </h1>
+        </motion.h1>
 
-        <p className="text-2xl mt-4 ">Backend / Full-Stack Developer</p>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-2xl mt-4"
+        >
+          Backend / Full-Stack Developer
+        </motion.p>
 
-        <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0"
+        >
           Building{" "}
           <span className="text-orange-400 font-medium">
             microservice-based systems
           </span>{" "}
           with Node.js, messaging queues, and clean architecture.
-        </p>
+        </motion.p>
 
-        <div className="mt-6 flex justify-center md:justify-start gap-4">
-          <button className="px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded-md transition">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-6 flex justify-center md:justify-start gap-4"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded-md transition"
+          >
             View Projects
-          </button>
+          </motion.button>
 
-          <a
+          <motion.a
             href="/Anas-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="px-6 py-2 border border-black/10 dark:border-white/20 rounded-md hover:bg-black/10 dark:hover:bg-white/10 transition"
           >
             Resume
-          </a>
-        </div>
-      </motion.div>
+          </motion.a>
+        </motion.div>
+      </div>
 
       {/* RIGHT IMAGE */}
       <div className="flex justify-center md:justify-end">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          ref={imageRef}
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
           {/* Glow Effect */}
