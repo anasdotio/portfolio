@@ -1,3 +1,4 @@
+import { useState } from "react";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -6,10 +7,16 @@ import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import Education from "./components/Education";
 import ProjectSection from "./components/ProjectSection";
+import SplashScreen from "./components/SplashScreen";
 
 const App = () => {
+  const [showContent, setShowContent] = useState(false);
+
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-white dark:bg-black transition-colors duration-500 px-4">
+    <>
+      <SplashScreen onComplete={() => setShowContent(true)} />
+
+      <section className={`relative w-full min-h-screen overflow-hidden bg-white dark:bg-black transition-colors duration-500 px-4 ${showContent ? 'opacity-100' : 'opacity-0'}`} style={{ transition: 'opacity 0.5s ease-in-out' }}>
       {/* SVG BACKGROUND */}
       <svg
         viewBox="0 0 1440 900"
@@ -68,6 +75,7 @@ const App = () => {
         <Footer />
       </div>
     </section>
+    </>
   );
 };
 
