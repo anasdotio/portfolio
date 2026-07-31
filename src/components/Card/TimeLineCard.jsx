@@ -11,26 +11,22 @@ const TimelineCard = ({ title, year, description }) => {
       viewport={{ once: true }}
     >
       {/* Timeline Dot */}
-      <div className="absolute -left-10 top-2 w-4 h-4 rounded-full bg-orange-500"></div>
+      <div className="absolute -left-10 top-2 w-4 h-4 rounded-full bg-yellow-500"></div>
 
       {/* Card */}
       <div
-        className="border border-black/10 dark:border-white/10 
-                      bg-white dark:bg-white/5
+        className="border border-white/10 
+                      bg-zinc-900/60
                       rounded-2xl p-5 
                       backdrop-blur-sm 
                       hover:scale-[1.02] 
                       transition duration-300"
       >
-        <h2 className="text-lg md:text-xl font-semibold text-black dark:text-white">
-          {title}
-        </h2>
+        <h2 className="text-lg md:text-xl font-semibold text-white">{title}</h2>
 
-        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{year}</p>
+        <p className="text-sm text-gray-400 mt-1">{year}</p>
 
-        <p className="text-sm text-gray-700 dark:text-gray-400 mt-3">
-          {description}
-        </p>
+        <p className="text-sm text-gray-300 mt-3">{description}</p>
       </div>
     </motion.div>
   );

@@ -21,23 +21,20 @@ const ContactUs = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="mt-24 text-black dark:text-white max-w-5xl mx-auto"
-    >
+    <section id="contact" className="mt-24 text-white max-w-5xl mx-auto">
       <SectionTitle title="Contact Me" />
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="p-4 border border-black/10 dark:border-white/10 rounded-2xl w-full bg-white dark:bg-black grid grid-cols-1 md:grid-cols-2 gap-8 transition-colors duration-500"
+        className="p-4 border border-white/10 rounded-2xl w-full bg-zinc-900/70 grid grid-cols-1 md:grid-cols-2 gap-8 transition-colors duration-500"
       >
         {/* LEFT */}
         <div>
           <div className="mb-5">
-            <h1 className="text-xl font-semibold text-orange-500">
+            <h1 className="text-xl font-semibold text-yellow-500">
               Just say Hello!
             </h1>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-gray-400">
               Let's get to know each other!
             </p>
           </div>
@@ -45,7 +42,7 @@ const ContactUs = () => {
           <div className="space-y-3">
             <div className="space-y-1">
               <input
-                className={`bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full ${errors?.name && "focus:border-red-500"} focus:outline-none focus:border-orange-400 transition-colors `}
+                className={`bg-zinc-950/70 border border-white/10 rounded-xl p-2 w-full text-white placeholder:text-gray-500 ${errors?.name && "focus:border-red-500"} focus:outline-none focus:border-yellow-400 transition-colors `}
                 type="text"
                 placeholder="Your Name"
                 {...register("name", {
@@ -58,7 +55,7 @@ const ContactUs = () => {
             </div>
             <div className="space-y-1">
               <input
-                className={`bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full ${errors?.name && "focus:border-red-500"} focus:outline-none focus:border-orange-400 transition-colors `}
+                className={`bg-zinc-950/70 border border-white/10 rounded-xl p-2 w-full text-white placeholder:text-gray-500 ${errors?.name && "focus:border-red-500"} focus:outline-none focus:border-yellow-400 transition-colors `}
                 type="text"
                 placeholder="Your Email"
                 {...register("email", {
@@ -72,7 +69,7 @@ const ContactUs = () => {
 
             <div>
               <textarea
-                className={`bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-xl p-2 w-full h-38 ${errors?.message && "focus:border-red-500"} resize-none focus:outline-none focus:border-orange-400 transition-colors dark:placeholder:text-gray-400 placeholder:text-gray-600`}
+                className={`bg-zinc-950/70 border border-white/10 rounded-xl p-2 w-full h-38 text-white ${errors?.message && "focus:border-red-500"} resize-none focus:outline-none focus:border-yellow-400 transition-colors placeholder:text-gray-500`}
                 placeholder="Your Message"
                 {...register("message", {
                   required: { value: true, message: "Message is required" },
@@ -87,10 +84,10 @@ const ContactUs = () => {
             </div>
 
             <div className="flex justify-center">
-              <div className="relative group rounded-xl p-0.5 bg-linear-to-r from-orange-500 via-orange-400 to-orange-500 w-full cursor-pointer">
+              <div className="relative group rounded-xl p-0.5 bg-linear-to-r from-yellow-500 via-yellow-400 to-yellow-500 w-full cursor-pointer">
                 <button
                   type="submit"
-                  className="px-6 py-2 w-full bg-white dark:bg-black text-black dark:text-white rounded-xl transition-all duration-300 group-hover:bg-gray-100 dark:group-hover:bg-black/80"
+                  className="px-6 py-2 w-full bg-zinc-950 text-white rounded-xl transition-all duration-300 group-hover:bg-zinc-900"
                 >
                   Send Message
                 </button>
@@ -101,22 +98,22 @@ const ContactUs = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="bg-gray-100 dark:bg-zinc-900/60 border border-black/10 dark:border-white/10 rounded-2xl p-3 space-y-5 transition-colors duration-500">
-          <h1 className="text-xl font-semibold text-orange-500">
+        <div className="bg-zinc-900/70 border border-white/10 rounded-2xl p-3 space-y-5 transition-colors duration-500">
+          <h1 className="text-xl font-semibold text-yellow-500">
             Get in Touch
           </h1>
 
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-300">
             💡 Let’s collaborate! Whether it’s a project, freelance work, or
             just tech talk — I’m always open to connect.
           </p>
 
-          <p className="text-gray-700 dark:text-gray-300">
+          <p className="text-gray-300">
             📩 Fill out the form or message me directly on socials.
           </p>
 
           <div>
-            <h2 className="text-md font-semibold text-orange-500">Follow me</h2>
+            <h2 className="text-md font-semibold text-yellow-500">Follow me</h2>
 
             <div className="flex md:justify-start gap-4 mt-4">
               <SocialCard

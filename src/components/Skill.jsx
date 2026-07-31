@@ -39,22 +39,20 @@ const SkillCard = ({ category, icon: Icon, items, index }) => {
     >
       {/* CIRCLE ICON */}
       <div className="flex justify-center mb-4">
-        <div className="w-16 h-16 rounded-full bg-orange-500/20 dark:bg-orange-500/30 flex items-center justify-center border border-orange-500/30 dark:border-orange-400/30 group-hover:border-orange-500 group-hover:scale-110 transition-all duration-300">
-          <Icon className="w-8 h-8 text-orange-500 dark:text-orange-400" />
+        <div className="w-16 h-16 rounded-full bg-yellow-500/20 dark:bg-yellow-500/30 flex items-center justify-center border border-yellow-500/30 dark:border-yellow-400/30 group-hover:border-yellow-500 group-hover:scale-110 transition-all duration-300">
+          <Icon className="w-8 h-8 text-yellow-500 dark:text-yellow-400" />
         </div>
       </div>
 
       {/* CARD */}
-      <div className="bg-gray-100 dark:bg-zinc-900/60 border border-gray-200 dark:border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-orange-500/50 dark:hover:border-orange-400/50 transition-colors text-center">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
-          {category}
-        </h3>
+      <div className="bg-zinc-900/60 border border-white/10 rounded-2xl p-5 backdrop-blur-md hover:border-yellow-500/50 dark:hover:border-yellow-400/50 transition-colors text-center">
+        <h3 className="text-lg font-semibold text-white mb-3">{category}</h3>
 
         <div className="flex flex-wrap justify-center gap-2">
           {items.map((skill, i) => (
             <span
               key={i}
-              className="px-3 py-1 text-xs rounded-full bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/30"
+              className="px-3 py-1 text-xs rounded-full bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 border border-yellow-500/30"
             >
               {skill}
             </span>
@@ -84,11 +82,7 @@ const Skill = () => {
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="mt-20 px-4 text-white"
-      id="skill"
-    >
+    <section ref={containerRef} className="mt-20 px-4 text-white" id="skill">
       <SectionTitle title="Skills" />
 
       {/* SKILL CARDS GRID */}

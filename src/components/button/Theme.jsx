@@ -40,14 +40,14 @@ const MoonIcon = () => (
 const Theme = ({ type }) => {
   const { theme, setTheme } = useTheme();
 
-  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+  const setDarkTheme = () => setTheme("dark");
 
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      onClick={toggleTheme}
-      className={`p-3 bg-orange-500 hover:bg-orange-600 rounded-full shadow-lg transition-colors duration-300 cursor-pointer absolute ${type === "desktop" ? "right-10 top-0" : "bottom-2"} text-white overflow-hidden`}
+      onClick={setDarkTheme}
+      className={`p-3 bg-yellow-500 hover:bg-yellow-600 rounded-full shadow-lg transition-colors duration-300 cursor-pointer absolute ${type === "desktop" ? "right-10 top-0" : "bottom-2"} text-zinc-950 overflow-hidden`}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -57,7 +57,7 @@ const Theme = ({ type }) => {
           exit={{ y: -20, opacity: 0, rotate: -45 }}
           transition={{ duration: 0.2, ease: "easeInOut" }}
         >
-          {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+          <MoonIcon />
         </motion.div>
       </AnimatePresence>
     </motion.button>

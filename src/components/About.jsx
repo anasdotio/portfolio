@@ -13,7 +13,7 @@ const skills = [
 const About = () => {
   return (
     <section
-      className="mt-15 transition-colors duration-300 text-gray-800 dark:text-white"
+      className="mt-15 transition-colors duration-300 text-white"
       id="about"
     >
       <SectionTitle title="About Me" />
@@ -27,30 +27,25 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <div className="bg-gray-100 dark:bg-zinc-900/60 border border-gray-200 dark:border-white/10 rounded-2xl p-6 backdrop-blur-md">
-            <h3 className="text-xl font-semibold text-orange-500 dark:text-orange-400 mb-4">
+          <div className="bg-zinc-900/60 border border-white/10 rounded-2xl p-6 backdrop-blur-md">
+            <h3 className="text-xl font-semibold text-yellow-400 mb-4">
               Who I Am
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
               I&apos;m a{" "}
-              <span className="text-orange-500 dark:text-orange-400 font-medium">
+              <span className="text-yellow-400 font-medium">
                 backend-focused developer
               </span>{" "}
               who builds scalable APIs, real-time systems, and clean backend
               architectures. I work primarily with{" "}
-              <span className="text-orange-500 dark:text-orange-400 font-medium">
-                Node.js
-              </span>{" "}
-              and{" "}
-              <span className="text-orange-500 dark:text-orange-400 font-medium">
-                Express
-              </span>
-              , focusing on performance, security, and maintainable code.
+              <span className="text-yellow-400 font-medium">Node.js</span> and{" "}
+              <span className="text-yellow-400 font-medium">Express</span>,
+              focusing on performance, security, and maintainable code.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              I&apos;m interested in system design and backend engineering, and I
-              enjoy solving real-world problems through thoughtful architecture
-              and reliable backend systems.
+            <p className="text-gray-300 leading-relaxed">
+              I&apos;m interested in system design and backend engineering, and
+              I enjoy solving real-world problems through thoughtful
+              architecture and reliable backend systems.
             </p>
           </div>
 
@@ -61,7 +56,7 @@ const About = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center justify-center gap-2 w-full mt-4 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-xl transition-colors"
+            className="inline-flex items-center justify-center gap-2 w-full mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-zinc-950 font-medium rounded-xl transition-colors"
           >
             <svg
               className="w-5 h-5"
@@ -90,15 +85,11 @@ const About = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-gray-100 dark:bg-zinc-900/60 border border-gray-200 dark:border-white/10 rounded-xl p-4 backdrop-blur-md hover:border-orange-500/50 dark:hover:border-orange-400/50 transition-colors"
+              className="bg-zinc-900/60 border border-white/10 rounded-xl p-4 backdrop-blur-md hover:border-yellow-500/50 dark:hover:border-yellow-400/50 transition-colors"
             >
-              <skill.icon className="w-8 h-8 text-orange-500 dark:text-orange-400 mb-3" />
-              <h4 className="font-semibold text-gray-800 dark:text-white">
-                {skill.label}
-              </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                {skill.desc}
-              </p>
+              <skill.icon className="w-8 h-8 text-yellow-400 mb-3" />
+              <h4 className="font-semibold text-white">{skill.label}</h4>
+              <p className="text-sm text-gray-400 mt-1">{skill.desc}</p>
             </motion.div>
           ))}
         </div>

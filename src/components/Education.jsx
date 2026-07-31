@@ -9,7 +9,7 @@ const Education = () => {
       <div>
         <SectionTitle title="Education" />
 
-        <div className="relative border-l-2 border-orange-500 pl-8 space-y-10">
+        <div className="relative border-l-2 border-yellow-500 pl-8 space-y-10">
           <TimelineCard
             title="Bachelor of Technology in Computer Science & Engineering"
             year="2023 - Present"
@@ -28,7 +28,7 @@ const Education = () => {
       <div>
         <SectionTitle title="Experience" />
 
-        <div className="relative border-l-2 border-orange-500 pl-8 space-y-10">
+        <div className="relative border-l-2 border-yellow-500 pl-8 space-y-10">
           <TimelineCard
             title="Frontend Developer Intern"
             year="Featherone - Jul 2022 - Aug 2022"

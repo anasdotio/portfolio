@@ -1,18 +1,11 @@
 import React, { useEffect } from "react";
 
 const useTheme = () => {
-  const [theme, setTheme] = React.useState(
-    localStorage.getItem("theme") || "dark",
-  );
+  const [theme, setTheme] = React.useState("dark");
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-
-    localStorage.setItem("theme", theme);
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
   }, [theme]);
 
   return { theme, setTheme };

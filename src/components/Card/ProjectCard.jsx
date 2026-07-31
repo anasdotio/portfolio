@@ -1,4 +1,4 @@
-import React from "react";
+import { ExternalLink, Github } from "lucide-react";
 
 const ProjectCard = ({
   title,
@@ -9,33 +9,34 @@ const ProjectCard = ({
   demo,
 }) => {
   return (
-    <div className="group w-78 border border-white/10 bg-zinc-900/50 backdrop-blur-md rounded-2xl overflow-hidden hover:border-orange-500/40 hover:shadow-xl transition duration-300 hover:-translate-y-2 mx-auto">
-      
-      {/* Project Image */}
-      <div className="overflow-hidden">
+    <article className="group h-full overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-yellow-400/40 hover:shadow-2xl hover:shadow-yellow-500/10">
+      <div className="relative overflow-hidden">
         <img
           src={image || "/default.png"}
           alt={title}
-          className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
+          className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
+
+        <div className="absolute left-4 top-4 inline-flex items-center rounded-full border border-yellow-400/30 bg-zinc-950/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-yellow-300 backdrop-blur-sm">
+          Featured
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-3 space-y-4">
-        
-        {/* Title */}
-        <h3 className="text-xl font-semibold text-white">{title}</h3>
+      <div className="flex h-full flex-col gap-5 p-5">
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold tracking-tight text-white">
+            {title}
+          </h3>
+          <p className="text-sm leading-relaxed text-gray-400">{description}</p>
+        </div>
 
-        {/* Description */}
-        <p className="text-gray-400 text-sm">{description}</p>
-
-        {/* Tech Stack */}
         {tech?.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {tech.map((item, index) => (
               <span
                 key={index}
-                className="text-xs px-3 py-1 bg-white/5 border border-white/10 rounded-full text-gray-300"
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-200"
               >
                 {item}
               </span>
@@ -43,15 +44,15 @@ const ProjectCard = ({
           </div>
         )}
 
-        {/* Buttons */}
-        <div className="flex gap-3 pt-2">
+        <div className="mt-auto flex flex-wrap gap-3 pt-1">
           {github && (
             <a
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white transition hover:border-white/20 hover:bg-white/10"
             >
+              <Github className="h-4 w-4" />
               GitHub
             </a>
           )}
@@ -61,14 +62,15 @@ const ProjectCard = ({
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 transition"
+              className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-4 py-2 text-sm font-medium text-zinc-950 transition hover:bg-yellow-300"
             >
+              <ExternalLink className="h-4 w-4" />
               Live Demo
             </a>
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

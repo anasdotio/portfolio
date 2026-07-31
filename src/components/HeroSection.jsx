@@ -22,7 +22,7 @@ const HeroSection = () => {
       className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 mt-12 items-center text-white px-4"
     >
       {/* LEFT CONTENT */}
-      <div className="text-center dark:text-white text-black md:text-left">
+      <div className="text-center text-white md:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ const HeroSection = () => {
           className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0"
         >
           Building{" "}
-          <span className="text-orange-400 font-medium">
+          <span className="text-yellow-400 font-medium">
             microservice-based systems
           </span>{" "}
           with Node.js, messaging queues, and clean architecture.
@@ -63,7 +63,7 @@ const HeroSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 bg-orange-500 hover:bg-orange-600 rounded-md transition"
+            className="px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-zinc-950 rounded-md transition"
           >
             View Projects
           </motion.button>
@@ -74,7 +74,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 border border-black/10 dark:border-white/20 rounded-md hover:bg-black/10 dark:hover:bg-white/10 transition"
+            className="px-6 py-2 border border-white/20 rounded-md hover:bg-white/10 transition"
           >
             Resume
           </motion.a>
@@ -91,7 +91,7 @@ const HeroSection = () => {
           className="relative"
         >
           {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-full bg-orange-500 blur-3xl opacity-20 bg-animate"></div>
+          <div className="absolute inset-0 rounded-full bg-yellow-500 blur-3xl opacity-20 bg-animate"></div>
 
           <img
             src={profileImage}

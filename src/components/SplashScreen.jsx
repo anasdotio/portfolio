@@ -53,17 +53,17 @@ const SplashScreen = ({ onComplete }) => {
               initial={{ opacity: 0, y: 50 }}
               className="splash-text text-5xl md:text-7xl font-bold text-white mb-2"
             >
-              <span className="text-orange-500">A</span>nas
+              <span className="text-yellow-500">A</span>nas
             </motion.h1>
 
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               className="splash-text text-5xl md:text-7xl font-bold text-white"
             >
-              <span className="text-orange-500">K</span>han
+              <span className="text-yellow-500">K</span>han
             </motion.h1>
 
-            <div className="splash-line w-0 h-1 bg-gradient-to-r from-orange-500 to-orange-300 mt-4 rounded-full" />
+            <div className="splash-line w-0 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 mt-4 rounded-full" />
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

@@ -16,9 +16,9 @@
 .bg-animate {
   background: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0.3),
-    oklch(75% 0.183 55.934),
-    rgba(255, 255, 255, 0.3)
+    rgba(250, 204, 21, 0.15),
+    rgba(250, 204, 21, 0.75),
+    rgba(250, 204, 21, 0.15)
   );
 
   background-size: 200% 200%;

@@ -5,7 +5,7 @@ const SocialCard = ({ link, icon }) => {
     <a
       href={link}
       target="_blank"
-      className="p-3 rounded-xl text-white bg-zinc-900 border border-white/10 hover:border-orange-500/40 hover:shadow-[0_0_20px_rgba(255,106,0,0.3)] transition-all"
+      className="p-3 rounded-xl text-white bg-zinc-900 border border-white/10 hover:border-yellow-500/40 hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] transition-all"
     >
       {icon && icon}
     </a>

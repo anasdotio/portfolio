@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import MobileNavbar from "./Navbar/MobileNabar";
-import Theme from "./button/Theme";
 
 const Navbar = () => {
   const navItems = [
@@ -39,16 +38,15 @@ const Navbar = () => {
       className="
         w-full sm:w-fit sm:mx-auto mt-6 p-[.8px] rounded-md
         bg-linear-to-r 
-        from-gray-300 via-orange-400 to-gray-300
-        dark:from-white/30 dark:via-orange-400 dark:to-white/30
+        from-gray-300 via-yellow-400 to-gray-300
+        dark:from-white/20 dark:via-yellow-400 dark:to-white/20
         transition-colors duration-300
       "
     >
       <div
         className="
           sm:flex items-center gap-8 px-6 py-3 rounded-md hidden
-          bg-white text-gray-800
-          dark:bg-black/80 dark:text-white
+          bg-zinc-950 text-white
           transition-colors duration-300
         "
       >
@@ -80,7 +78,7 @@ const Navbar = () => {
               href={item.link}
               className="
                 block
-                text-orange-500 dark:text-orange-400
+                text-yellow-500 dark:text-yellow-400
                 transition-transform duration-300
                 group-hover:-translate-y-full
               "
@@ -89,8 +87,6 @@ const Navbar = () => {
             </a>
           </div>
         ))}
-
-        <Theme type="desktop" />
       </div>
 
       <MobileNavbar />
