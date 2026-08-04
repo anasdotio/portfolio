@@ -19,7 +19,7 @@ const HeroSection = () => {
   return (
     <div
       id="home"
-      className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 mt-12 items-center text-white px-4"
+      className="mx-auto mt-12 grid max-w-5xl items-center gap-12 px-4 text-white md:grid-cols-[1.1fr_0.9fr]"
     >
       {/* LEFT CONTENT */}
       <div className="text-center text-white md:text-left">
@@ -82,13 +82,13 @@ const HeroSection = () => {
       </div>
 
       {/* RIGHT IMAGE */}
-      <div className="flex justify-center md:justify-end">
+      <div className="flex justify-center md:justify-center">
         <motion.div
           ref={imageRef}
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className=""
         >
           {/* Glow Effect */}
           <div className="absolute inset-0 rounded-full bg-yellow-500 blur-3xl opacity-20 bg-animate"></div>
@@ -96,7 +96,7 @@ const HeroSection = () => {
           <img
             src={profileImage}
             alt="Anas Khan"
-            className="relative w-64 h-64 md:w-72 md:h-72 object-cover object-top rounded-full border border-white/10 shadow-xl"
+            className=" h-64 w-64 border rounded-full border-white/10 object-cover object-top shadow-xl md:h-72 md:w-72"
           />
         </motion.div>
       </div>

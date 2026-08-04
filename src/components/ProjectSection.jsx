@@ -5,15 +5,6 @@ import project2 from "../assets/project2.png";
 
 const projects = [
   {
-    title: "Portfolio",
-    description:
-      "A personal portfolio website to showcase my projects and skills.",
-    image: project1,
-    tech: ["React.js", "Tailwind CSS"],
-    github: "https://github.com/anasdotio/portfolio",
-    demo: "https://anasdev.in",
-  },
-  {
     title: "AI Interview Report Generator",
     description:
       "AI-powered interview report generator that analyzes resumes and job descriptions to identify skill gaps, generate personalized interview questions, and create a 7-day adaptive preparation roadmap.",

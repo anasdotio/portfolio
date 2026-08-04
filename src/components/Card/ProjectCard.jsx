@@ -9,7 +9,7 @@ const ProjectCard = ({
   demo,
 }) => {
   return (
-    <article className="group h-full overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-yellow-400/40 hover:shadow-2xl hover:shadow-yellow-500/10">
+    <article className="group mx-auto h-full w-full max-w-[420px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-yellow-400/40 hover:shadow-2xl hover:shadow-yellow-500/10">
       <div className="relative overflow-hidden">
         <img
           src={image || "/default.png"}
@@ -44,13 +44,13 @@ const ProjectCard = ({
           </div>
         )}
 
-        <div className="mt-auto flex flex-wrap gap-3 pt-1">
+        <div className="flex flex-wrap items-center justify-start gap-3 pt-1">
           {github && (
             <a
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white transition hover:border-white/20 hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-xl border border-yellow-400/30 bg-zinc-950/80 px-4 py-2 text-sm font-medium text-white shadow-sm shadow-black/30 transition hover:border-yellow-400/50 hover:bg-zinc-800/90"
             >
               <Github className="h-4 w-4" />
               GitHub
