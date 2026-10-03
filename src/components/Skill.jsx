@@ -45,8 +45,8 @@ const SkillCard = ({ category, eyebrow, description, icon: Icon, items, index })
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className="skill-circle group"
     >
-      <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-5 backdrop-blur-md transition-all duration-300 group-hover:border-yellow-400/45 group-hover:bg-white/[0.06] group-hover:shadow-[0_0_32px_rgba(0,240,255,0.08)]">
-        <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-purple-500/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-5 backdrop-blur-md transition-all duration-300 group-hover:border-yellow-400/45 group-hover:bg-white/[0.06] group-hover:shadow-[0_0_32px_rgba(234,97,19,0.12)]">
+        <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-yellow-500/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
 
         <div className="relative flex items-start justify-between">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-yellow-400/25 bg-yellow-400/10 text-yellow-400 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105">

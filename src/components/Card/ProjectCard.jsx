@@ -19,7 +19,7 @@ const ProjectCard = ({
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(0,240,255,0.18),transparent_35%),linear-gradient(135deg,#101b25,#09090b)]">
+          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(248,143,34,0.22),transparent_35%),linear-gradient(135deg,#2b160d,#09090b)]">
             <Bot className="h-16 w-16 text-yellow-400/70 transition duration-500 group-hover:scale-110 group-hover:text-yellow-400" />
           </div>
         )}
@@ -27,7 +27,7 @@ const ProjectCard = ({
 
         <div className={`absolute left-4 top-4 inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] backdrop-blur-sm ${
           status
-            ? "border-purple-400/40 bg-purple-500/15 text-purple-200"
+            ? "border-yellow-400/40 bg-yellow-500/15 text-yellow-200"
             : "border-yellow-400/30 bg-zinc-950/70 text-yellow-300"
         }`}>
           {status || "Featured"}

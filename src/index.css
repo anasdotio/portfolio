@@ -2,15 +2,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-yellow-200: #b8fbff;
-  --color-yellow-300: #80f7ff;
-  --color-yellow-400: #00f0ff;
-  --color-yellow-500: #00f0ff;
-  --color-yellow-600: #00cbd8;
-  --color-yellow-700: #008f99;
-  --color-purple-500: #7000ff;
-  --color-zinc-900: #0a0a0a;
-  --color-zinc-950: #050505;
+  --color-yellow-200: #ffe3b3;
+  --color-yellow-300: #fbb931;
+  --color-yellow-400: #f88f22;
+  --color-yellow-500: #ea6113;
+  --color-yellow-600: #c84c0d;
+  --color-yellow-700: #a83d0a;
+  --color-purple-400: #fbb931;
+  --color-purple-500: #ea6113;
+  --color-purple-200: #ffe3b3;
+  --color-zinc-900: #2a1d16;
+  --color-zinc-950: #1d1511;
 }
 
 @keyframes fade-in {
@@ -28,9 +30,9 @@
 .bg-animate {
   background: linear-gradient(
     120deg,
-    rgba(0, 240, 255, 0.12),
-    rgba(112, 0, 255, 0.28),
-    rgba(0, 240, 255, 0.12)
+    rgba(234, 97, 19, 0.12),
+    rgba(248, 143, 34, 0.28),
+    rgba(234, 97, 19, 0.12)
   );
 
   background-size: 200% 200%;
@@ -39,8 +41,8 @@
 
 .grid-background {
   background-image:
-    linear-gradient(rgba(0, 240, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(234, 97, 19, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 97, 19, 0.09) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
   -webkit-mask-image: radial-gradient(

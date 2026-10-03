@@ -28,8 +28,8 @@ const App = () => {
         >
           <defs>
             <radialGradient id="yellowGlow">
-              <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#00f0ff" stopOpacity="0" />
+              <stop offset="0%" stopColor="#f88f22" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#f88f22" stopOpacity="0" />
             </radialGradient>
           </defs>
 

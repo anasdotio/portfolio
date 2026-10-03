@@ -63,7 +63,7 @@ const SplashScreen = ({ onComplete }) => {
               <span className="text-yellow-500">K</span>han
             </motion.h1>
 
-            <div className="splash-line w-0 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mt-4 rounded-full" />
+            <div className="splash-line w-0 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 mt-4 rounded-full" />
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
