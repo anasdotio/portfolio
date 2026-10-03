@@ -35,39 +35,25 @@ const Navbar = () => {
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.6 } }}
-      className="
-        w-full sm:w-fit sm:mx-auto mt-6 p-[.8px] rounded-md
-        bg-linear-to-r 
-        from-gray-300 via-yellow-400 to-gray-300
-        dark:from-white/20 dark:via-yellow-400 dark:to-white/20
-        transition-colors duration-300
-      "
+      className="mx-auto mt-6 w-full max-w-5xl rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 backdrop-blur-xl transition-colors duration-300"
     >
       <div
-        className="
-          sm:flex items-center gap-8 px-6 py-3 rounded-md hidden
-          bg-zinc-950 text-white
-          transition-colors duration-300
-        "
+        className="hidden items-center justify-between gap-8 rounded-xl bg-zinc-950/80 px-5 py-3 text-white transition-colors duration-300 sm:flex"
       >
+        <a href="#home" className="hidden items-center gap-2 text-sm font-semibold tracking-wide sm:flex">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-yellow-500 text-xs text-zinc-950">A</span>
+          Anas Khan
+        </a>
+        <div className="hidden items-center gap-8 sm:flex">
         {navItems.map((item) => (
           <div
             key={item.id}
-            className="
-              relative 
-              h-6 
-              min-w-fit 
-              overflow-hidden 
-              cursor-pointer 
-              group
-            "
+            className="group relative h-6 min-w-fit cursor-pointer overflow-hidden"
           >
             {/* Normal Text */}
             <span
               className="
-                block
-                transition-transform duration-300
-                group-hover:-translate-y-full
+                block text-sm text-white/60 transition-transform duration-300 group-hover:-translate-y-full
               "
             >
               {item.name}
@@ -77,19 +63,19 @@ const Navbar = () => {
             <a
               href={item.link}
               className="
-                block
-                text-yellow-500 dark:text-yellow-400
-                transition-transform duration-300
-                group-hover:-translate-y-full
+                block text-sm text-yellow-400 transition-transform duration-300 group-hover:-translate-y-full
               "
             >
               {item.name}
             </a>
           </div>
         ))}
+        </div>
       </div>
 
-      <MobileNavbar />
+      <div className="flex sm:hidden">
+        <MobileNavbar />
+      </div>
     </motion.nav>
   );
 };
