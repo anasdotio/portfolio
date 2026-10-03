@@ -19,7 +19,7 @@ const ProjectCard = ({
             className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(248,143,34,0.22),transparent_35%),linear-gradient(135deg,#2b160d,#09090b)]">
+          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(248,143,34,0.16),transparent_35%),linear-gradient(135deg,#151515,#050505)]">
             <Bot className="h-16 w-16 text-yellow-400/70 transition duration-500 group-hover:scale-110 group-hover:text-yellow-400" />
           </div>
         )}

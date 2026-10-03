@@ -11,8 +11,8 @@
   --color-purple-400: #fbb931;
   --color-purple-500: #ea6113;
   --color-purple-200: #ffe3b3;
-  --color-zinc-900: #2a1d16;
-  --color-zinc-950: #1d1511;
+  --color-zinc-900: #111111;
+  --color-zinc-950: #050505;
 }
 
 @keyframes fade-in {
@@ -30,9 +30,9 @@
 .bg-animate {
   background: linear-gradient(
     120deg,
-    rgba(234, 97, 19, 0.12),
-    rgba(248, 143, 34, 0.28),
-    rgba(234, 97, 19, 0.12)
+    rgba(234, 97, 19, 0.08),
+    rgba(248, 143, 34, 0.18),
+    rgba(234, 97, 19, 0.08)
   );
 
   background-size: 200% 200%;
@@ -41,8 +41,8 @@
 
 .grid-background {
   background-image:
-    linear-gradient(rgba(234, 97, 19, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(234, 97, 19, 0.09) 1px, transparent 1px);
+    linear-gradient(rgba(234, 97, 19, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(234, 97, 19, 0.06) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
   -webkit-mask-image: radial-gradient(
