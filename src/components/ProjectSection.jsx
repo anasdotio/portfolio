@@ -12,6 +12,13 @@ const projects = [
     github: "https://github.com/anasdotio/Ai-Interview-Report-Generator",
     // demo: "https://yourecommerce.com",
   },
+  {
+    title: "RAG AI Document Chatbox",
+    description:
+      "An intelligent document assistant that uses retrieval-augmented generation to search uploaded files and provide grounded, conversational answers.",
+    tech: ["RAG", "LLM", "Node.js", "Vector Database"],
+    status: "Add Soon",
+  },
 ];
 
 const ProjectSection = () => {

@@ -28,8 +28,8 @@ const App = () => {
         >
           <defs>
             <radialGradient id="yellowGlow">
-              <stop offset="0%" stopColor="#facc15" stopOpacity="0.3" />
-              <stop offset="100%" stopColor="#facc15" stopOpacity="0" />
+              <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#00f0ff" stopOpacity="0" />
             </radialGradient>
           </defs>
 
@@ -42,6 +42,8 @@ const App = () => {
 
           <circle cx="1100" cy="350" r="420" fill="url(#yellowGlow)" />
         </svg>
+
+        <div aria-hidden="true" className="grid-background absolute inset-0" />
 
         {/* CONTENT */}
         <div className="relative z-10 min-h-screen text-white transition-colors duration-500">

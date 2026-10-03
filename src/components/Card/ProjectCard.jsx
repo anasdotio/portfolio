@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from "lucide-react";
+import { Bot, ExternalLink, Github } from "lucide-react";
 
 const ProjectCard = ({
   title,
@@ -7,19 +7,30 @@ const ProjectCard = ({
   tech = [],
   github,
   demo,
+  status,
 }) => {
   return (
     <article className="group mx-auto h-full w-full max-w-[420px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-yellow-400/40 hover:shadow-2xl hover:shadow-yellow-500/10">
-      <div className="relative overflow-hidden">
-        <img
-          src={image || "/default.png"}
-          alt={title}
-          className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+      <div className="relative h-56 overflow-hidden">
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(0,240,255,0.18),transparent_35%),linear-gradient(135deg,#101b25,#09090b)]">
+            <Bot className="h-16 w-16 text-yellow-400/70 transition duration-500 group-hover:scale-110 group-hover:text-yellow-400" />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
 
-        <div className="absolute left-4 top-4 inline-flex items-center rounded-full border border-yellow-400/30 bg-zinc-950/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-yellow-300 backdrop-blur-sm">
-          Featured
+        <div className={`absolute left-4 top-4 inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] backdrop-blur-sm ${
+          status
+            ? "border-purple-400/40 bg-purple-500/15 text-purple-200"
+            : "border-yellow-400/30 bg-zinc-950/70 text-yellow-300"
+        }`}>
+          {status || "Featured"}
         </div>
       </div>
 
@@ -45,7 +56,7 @@ const ProjectCard = ({
         )}
 
         <div className="flex flex-wrap items-center justify-start gap-3 pt-1">
-          {github && (
+          {github && !status && (
             <a
               href={github}
               target="_blank"

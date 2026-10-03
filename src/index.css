@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-yellow-200: #b8fbff;
+  --color-yellow-300: #80f7ff;
+  --color-yellow-400: #00f0ff;
+  --color-yellow-500: #00f0ff;
+  --color-yellow-600: #00cbd8;
+  --color-yellow-700: #008f99;
+  --color-purple-500: #7000ff;
+  --color-zinc-900: #0a0a0a;
+  --color-zinc-950: #050505;
+}
+
 @keyframes fade-in {
   0% {
     background-position: 0% 50%;
@@ -15,12 +27,26 @@
 
 .bg-animate {
   background: linear-gradient(
-    to right,
-    rgba(250, 204, 21, 0.15),
-    rgba(250, 204, 21, 0.75),
-    rgba(250, 204, 21, 0.15)
+    120deg,
+    rgba(0, 240, 255, 0.12),
+    rgba(112, 0, 255, 0.28),
+    rgba(0, 240, 255, 0.12)
   );
 
   background-size: 200% 200%;
   animation: fade-in 4s linear infinite;
+}
+
+.grid-background {
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 20%,
+    transparent 78%
+  );
+  opacity: 0.7;
 }
