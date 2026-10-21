@@ -13,7 +13,7 @@ const About = () => (
       <Reveal>
         <div className="space-y-5">
           {about.body.map((paragraph, i) => (
-            <p key={i} className="leading-relaxed text-slate-400">
+            <p key={i} className="leading-relaxed text-bone-400">
               {paragraph}
             </p>
           ))}
@@ -24,13 +24,13 @@ const About = () => (
               return (
                 <div
                   key={domain.label}
-                  className="surface rounded-xl p-4 transition-colors duration-300 hover:border-nebula-500/30"
+                  className="surface rounded-xl p-4 transition-colors duration-300 hover:border-ember-500/30"
                 >
-                  <Icon className="h-4 w-4 text-nebula-400" />
-                  <p className="mt-3 text-sm font-medium text-white">
+                  <Icon className="h-4 w-4 text-ember-400" />
+                  <p className="mt-3 text-sm font-medium text-bone-100">
                     {domain.label}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-500">{domain.desc}</p>
+                  <p className="mt-0.5 text-xs text-bone-500">{domain.desc}</p>
                 </div>
               );
             })}
@@ -58,10 +58,10 @@ const About = () => (
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="text-base font-semibold text-white">
+                  <h3 className="text-base font-semibold text-bone-100">
                     {principle.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                  <p className="mt-2 text-sm leading-relaxed text-bone-400">
                     {principle.text}
                   </p>
                 </div>

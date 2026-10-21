@@ -10,7 +10,7 @@ const iconFor = (label) =>
   ({ GitHub: "GH", LinkedIn: "in", Instagram: "IG", Email: "@" })[label] ?? "•";
 
 const fieldClass =
-  "w-full rounded-xl border border-white/[0.09] bg-ink-950/60 px-4 py-3 text-sm text-white placeholder:text-slate-600 transition-colors duration-200 focus:border-nebula-500/60 focus:bg-ink-950 focus:outline-none focus:ring-2 focus:ring-nebula-500/20";
+  "w-full rounded-xl border border-bone-100/[0.09] bg-ink-950/60 px-4 py-3 text-sm text-bone-100 placeholder:text-bone-600 transition-colors duration-200 focus:border-ember-500/60 focus:bg-ink-950 focus:outline-none focus:ring-2 focus:ring-ember-500/20";
 
 const ContactUs = () => {
   const {
@@ -47,7 +47,7 @@ const ContactUs = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-2 block text-xs font-medium text-slate-400"
+                    className="mb-2 block text-xs font-medium text-bone-400"
                   >
                     Your name
                   </label>
@@ -75,7 +75,7 @@ const ContactUs = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="mb-2 block text-xs font-medium text-slate-400"
+                    className="mb-2 block text-xs font-medium text-bone-400"
                   >
                     Email address
                   </label>
@@ -104,7 +104,7 @@ const ContactUs = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-xs font-medium text-slate-400"
+                  className="mb-2 block text-xs font-medium text-bone-400"
                 >
                   Message
                 </label>
@@ -144,8 +144,8 @@ const ContactUs = () => {
         {/* ---------- direct channels ---------- */}
         <Reveal delay={0.1}>
           <SpotlightCard className="surface flex h-full flex-col p-6 sm:p-8">
-            <h3 className="text-lg font-semibold text-white">Get in touch</h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-400">
+            <h3 className="text-lg font-semibold text-bone-100">Get in touch</h3>
+            <p className="mt-3 text-sm leading-relaxed text-bone-400">
               Prefer a direct line? Reach out on any of these — I usually reply
               within a day.
             </p>
@@ -159,20 +159,20 @@ const ContactUs = () => {
                       social.href.startsWith("mailto:") ? undefined : "_blank"
                     }
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-3.5 rounded-xl border border-white/[0.07] bg-white/[0.02] p-3 transition-colors duration-200 hover:border-nebula-500/40 hover:bg-nebula-500/[0.07]"
+                    className="group flex items-center gap-3.5 rounded-xl border border-bone-100/[0.07] bg-bone-100/[0.02] p-3 transition-colors duration-200 hover:border-ember-500/40 hover:bg-ember-500/[0.07]"
                   >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] bg-ink-900 font-mono text-[11px] font-bold text-nebula-300 transition-colors group-hover:border-nebula-500/40">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-bone-100/[0.08] bg-ink-900 font-mono text-[11px] font-bold text-ember-300 transition-colors group-hover:border-ember-500/40">
                       {iconFor(social.label)}
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block text-sm font-medium text-white">
+                      <span className="block text-sm font-medium text-bone-100">
                         {social.label}
                       </span>
-                      <span className="block truncate text-xs text-slate-500">
+                      <span className="block truncate text-xs text-bone-500">
                         {social.handle}
                       </span>
                     </span>
-                    <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-600 transition-colors group-hover:text-nebula-300" />
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-bone-600 transition-colors group-hover:text-ember-300" />
                   </a>
                 </li>
               ))}
@@ -200,7 +200,7 @@ const ContactUs = () => {
         toastOptions={{
           style: {
             background: "#12121f",
-            border: "1px solid rgba(129,140,248,0.25)",
+            border: "1px solid rgba(204,143,44,0.25)",
             color: "#e6e6f0",
           },
         }}

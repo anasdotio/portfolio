@@ -26,15 +26,15 @@ const ProjectCard = ({
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(129,140,248,0.18),transparent_55%)]">
-            <Sparkles className="h-10 w-10 text-nebula-400/70" />
+          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(204,143,44,0.18),transparent_55%)]">
+            <Sparkles className="h-10 w-10 text-ember-400/70" />
           </div>
         )}
 
         <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/25 to-transparent" />
 
-        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-950/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-300 backdrop-blur-sm">
-          <span className="h-1 w-1 rounded-full bg-nebula-400" />
+        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-bone-100/10 bg-ink-950/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-bone-300 backdrop-blur-sm">
+          <span className="h-1 w-1 rounded-full bg-ember-400" />
           {status || "Featured"}
         </span>
       </div>
@@ -43,12 +43,12 @@ const ProjectCard = ({
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <div className="flex items-start gap-4">
           <span className="index-num shrink-0">{number}</span>
-          <h3 className="text-lg font-semibold leading-snug tracking-tight text-white sm:text-xl">
+          <h3 className="text-lg font-semibold leading-snug tracking-tight text-bone-100 sm:text-xl">
             {title}
           </h3>
         </div>
 
-        <p className="mt-4 text-sm leading-relaxed text-slate-400">
+        <p className="mt-4 text-sm leading-relaxed text-bone-400">
           {description}
         </p>
 
@@ -56,7 +56,7 @@ const ProjectCard = ({
           {tech.map((item) => (
             <li
               key={item}
-              className="rounded-md border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-slate-400"
+              className="rounded-md border border-bone-100/[0.08] bg-bone-100/[0.03] px-2.5 py-1 font-mono text-[11px] text-bone-400"
             >
               {item}
             </li>
@@ -69,7 +69,7 @@ const ProjectCard = ({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-2 text-sm font-medium text-white transition-colors hover:border-nebula-500/45 hover:bg-nebula-500/10"
+              className="inline-flex items-center gap-2 rounded-xl border border-bone-100/[0.1] bg-bone-100/[0.03] px-4 py-2 text-sm font-medium text-bone-100 transition-colors hover:border-ember-500/45 hover:bg-ember-500/10"
             >
               <Github className="h-4 w-4" />
               GitHub
@@ -80,7 +80,7 @@ const ProjectCard = ({
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-nebula-500 to-violet-600 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-ember-500 to-cobalt-600 px-4 py-2 text-sm font-medium text-bone-100 transition-opacity hover:opacity-90"
             >
               <ArrowUpRight className="h-4 w-4" />
               Live Demo

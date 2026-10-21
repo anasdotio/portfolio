@@ -43,7 +43,7 @@ const Navbar = () => {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-white/[0.07] bg-ink-950/80 backdrop-blur-xl"
+          ? "border-b border-bone-100/[0.07] bg-ink-950/80 backdrop-blur-xl"
           : "border-b border-transparent"
       }`}
     >
@@ -53,14 +53,14 @@ const Navbar = () => {
           className="group flex items-center gap-3"
           aria-label={`${profile.name} — home`}
         >
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-nebula-500 to-violet-600 text-sm font-bold text-white shadow-lg shadow-nebula-600/30 transition-transform duration-300 group-hover:scale-105">
+          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-ember-500 to-cobalt-600 text-sm font-bold text-bone-100 shadow-lg shadow-ember-600/30 transition-transform duration-300 group-hover:scale-105">
             {profile.initials}
           </span>
           <span className="hidden sm:block">
-            <span className="block text-sm font-semibold leading-tight text-white">
+            <span className="block text-sm font-semibold leading-tight text-bone-100">
               {profile.name}
             </span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
+            <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-bone-500">
               {profile.role}
             </span>
           </span>
@@ -73,14 +73,14 @@ const Navbar = () => {
                 href={`#${item.id}`}
                 className={`relative rounded-lg px-3.5 py-2 text-sm transition-colors duration-200 ${
                   active === item.id
-                    ? "text-white"
-                    : "text-slate-400 hover:text-white"
+                    ? "text-bone-100"
+                    : "text-bone-400 hover:text-bone-100"
                 }`}
               >
                 {active === item.id && (
                   <motion.span
                     layoutId="nav-pill"
-                    className="absolute inset-0 -z-10 rounded-lg border border-nebula-500/25 bg-nebula-500/10"
+                    className="absolute inset-0 -z-10 rounded-lg border border-ember-500/25 bg-ember-500/10"
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -103,7 +103,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white transition-colors hover:border-nebula-500/40 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-bone-100/10 bg-bone-100/[0.04] text-bone-100 transition-colors hover:border-ember-500/40 md:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
@@ -119,7 +119,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-white/[0.07] bg-ink-950/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-bone-100/[0.07] bg-ink-950/95 backdrop-blur-xl md:hidden"
           >
             <ul className="space-y-1 px-5 py-5">
               {navItems.map((item, i) => (
@@ -134,19 +134,19 @@ const Navbar = () => {
                     onClick={() => setMenuOpen(false)}
                     className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm transition-colors ${
                       active === item.id
-                        ? "bg-nebula-500/10 text-white"
-                        : "text-slate-400"
+                        ? "bg-ember-500/10 text-bone-100"
+                        : "text-bone-400"
                     }`}
                   >
                     {item.label}
-                    <span className="font-mono text-[10px] text-slate-600">
+                    <span className="font-mono text-[10px] text-bone-600">
                       0{i + 1}
                     </span>
                   </a>
                 </motion.li>
               ))}
             </ul>
-            <div className="flex items-center gap-3 border-t border-white/[0.07] px-5 py-5">
+            <div className="flex items-center gap-3 border-t border-bone-100/[0.07] px-5 py-5">
               <a
                 href={profile.resume}
                 target="_blank"

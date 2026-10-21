@@ -8,7 +8,7 @@ import { profile } from "../data/content";
  */
 const ClosingCta = () => (
   <section className="relative overflow-hidden px-5 py-24 sm:px-8 sm:py-32">
-    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_100%_at_50%_100%,rgba(99,102,241,0.22),transparent_70%)]" />
+    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_100%_at_50%_100%,rgba(204,143,44,0.22),transparent_70%)]" />
 
     <div className="relative mx-auto max-w-4xl text-center">
       <motion.p
@@ -26,7 +26,7 @@ const ClosingCta = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, delay: 0.08 }}
-        className="display mt-6 text-4xl text-white sm:text-6xl"
+        className="display mt-6 text-4xl text-bone-100 sm:text-6xl"
       >
         Let&apos;s make something
         <span className="text-gradient block">worth shipping.</span>
@@ -37,7 +37,7 @@ const ClosingCta = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, delay: 0.16 }}
-        className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400"
+        className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-bone-400"
       >
         I&apos;m currently open to backend and full-stack roles, freelance projects,
         and collaborations. If that sounds like you, let&apos;s talk.

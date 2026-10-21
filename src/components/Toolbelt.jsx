@@ -18,7 +18,7 @@ const Toolbelt = () => (
         {toolbelt.map((tool, i) => (
           <li
             key={tool}
-            className="group rounded-xl border border-white/[0.08] bg-white/[0.025] px-4 py-2.5 text-sm text-slate-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-nebula-500/40 hover:bg-nebula-500/[0.08] hover:text-white"
+            className="group rounded-xl border border-bone-100/[0.08] bg-bone-100/[0.025] px-4 py-2.5 text-sm text-bone-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-ember-500/40 hover:bg-ember-500/[0.08] hover:text-bone-100"
             style={{ transitionDelay: `${i * 8}ms` }}
           >
             {tool}

@@ -1,34 +1,48 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Nebula design system — dark-only, indigo/violet.
-   Inspired by editorial portfolio references: oversized display type,
-   numbered section markers, hairline dividers and restrained glow.
+   Editorial portfolio system — warm near-black ground, bone display
+   type, amber accent.
+
+   Inspired by the supplied references: an oversized condensed wordmark
+   with the portrait fused into the letterforms, corner meta labels,
+   hairline rules instead of card grids, and a single warm accent
+   rather than a generic indigo glow.
 ------------------------------------------------------------------- */
 @theme {
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     sans-serif;
+  --font-display: "Anton", "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Surfaces */
-  --color-ink-950: #050508;
-  --color-ink-900: #0a0a12;
-  --color-ink-800: #12121f;
-  --color-ink-700: #1b1b2e;
+  /* Surfaces — warm near-black */
+  --color-ink-950: #0a0a0b;
+  --color-ink-900: #111112;
+  --color-ink-800: #18181a;
+  --color-ink-700: #212124;
 
-  /* Accent — nebula */
-  --color-nebula-200: #e0e7ff;
-  --color-nebula-300: #c7d2fe;
-  --color-nebula-400: #a5b4fc;
-  --color-nebula-500: #818cf8;
-  --color-nebula-600: #6366f1;
-  --color-nebula-700: #4f46e5;
+  /* Bone — cream display type */
+  --color-bone-100: #f4efe4;
+  --color-bone-200: #e6dfd0;
+  --color-bone-300: #cfc6b4;
+  --color-bone-400: #a9a294;
+  --color-bone-500: #7d776c;
+  --color-bone-600: #5c574f;
 
-  /* Accent — violet */
-  --color-violet-300: #d8b4fe;
-  --color-violet-400: #c084fc;
-  --color-violet-500: #a855f7;
-  --color-violet-600: #9333ea;
+  /* Ember — amber accent */
+  --color-ember-200: #f6e3bd;
+  --color-ember-300: #edc983;
+  --color-ember-400: #dfaa4d;
+  --color-ember-500: #cc8f2c;
+  --color-ember-600: #a76f1e;
+  --color-ember-700: #7d5215;
+
+  /* Cobalt — cool secondary */
+  --color-cobalt-300: #9db8dd;
+  --color-cobalt-400: #6f93c4;
+  --color-cobalt-500: #4a6ea3;
+  --color-cobalt-600: #365180;
+  --color-cobalt-700: #263a5c;
 
   /* Motion */
   --animate-marquee: marquee 42s linear infinite;
@@ -91,14 +105,14 @@
 
   body {
     background-color: var(--color-ink-950);
-    color: #e6e6f0;
+    color: #d9d3c6;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background: rgba(129, 140, 248, 0.35);
+    background: rgba(204, 143, 44, 0.32);
     color: #fff;
   }
 
@@ -110,12 +124,12 @@
     background: var(--color-ink-950);
   }
   ::-webkit-scrollbar-thumb {
-    background: #23233a;
+    background: #2a2a2b;
     border-radius: 99px;
     border: 2px solid var(--color-ink-950);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-nebula-600);
+    background: var(--color-ember-500);
   }
 
   section[id] {
@@ -125,7 +139,7 @@
 
 @layer components {
   .glass {
-    background: color-mix(in oklab, var(--color-ink-950) 72%, transparent);
+    background: color-mix(in oklab, var(--color-ink-950) 74%, transparent);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
   }
@@ -133,10 +147,10 @@
   .surface {
     background: linear-gradient(
       160deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.012)
+      rgba(244, 239, 228, 0.045),
+      rgba(244, 239, 228, 0.012)
     );
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(244, 239, 228, 0.08);
   }
 
   /* Cursor-tracked highlight; JS sets --mx/--my on hover */
@@ -147,7 +161,7 @@
     border-radius: inherit;
     background: radial-gradient(
       320px circle at var(--mx, 50%) var(--my, 50%),
-      rgba(129, 140, 248, 0.15),
+      rgba(204, 143, 44, 0.14),
       transparent 70%
     );
     opacity: 0;
@@ -158,16 +172,77 @@
     opacity: 1;
   }
 
+  /* Warm gold gradient for the accent words */
   .text-gradient {
     background: linear-gradient(
       100deg,
-      var(--color-nebula-300),
-      var(--color-violet-400) 48%,
-      var(--color-nebula-500)
+      var(--color-ember-200),
+      var(--color-ember-400) 46%,
+      var(--color-ember-600)
     );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  /* Oversized condensed masthead type */
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    line-height: 0.8;
+  }
+
+  /* Outlined display type — the portrait reads through the letterforms.
+     The stroke scales with the type so it stays a hairline at every size. */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: max(1px, 0.009em) var(--color-bone-100);
+  }
+
+  /* ---------- masthead ----------------------------------------------
+     The wordmark and the portrait are one composition: the type sets the
+     scale, and the portrait is placed against it in `em` so the head
+     lands on the same letters at every viewport width.
+
+     --masthead    the display size
+     --portrait-at the x of the head's centre
+     --portrait-w  the cutout's width
+     --portrait-aspect  its height-to-width ratio
+     --portrait-eye    the eye line, as a fraction of its height
+     --cap-mid     the middle of the cap band, in em from the top of the
+                   masthead box — the eye line is aligned to this        */
+  .masthead {
+    --masthead: clamp(3.4rem, 18.5vw, 15rem);
+    --portrait-at: 2.05;
+    --portrait-w: 1.28;
+    --portrait-aspect: 1.087;
+    --portrait-eye: 0.329;
+    --cap-mid: 0.392;
+    position: relative;
+    font-size: var(--masthead);
+  }
+
+  .masthead__portrait {
+    position: absolute;
+    top: calc(
+      var(--masthead) * var(--portrait-eye) * var(--portrait-aspect) -
+        var(--masthead) * var(--cap-mid)
+    );
+    left: calc(var(--portrait-at) * 1em);
+    width: calc(var(--masthead) * var(--portrait-w));
+  }
+
+  /* On a narrow screen the type is smaller, so the portrait is scaled up
+     against it to stay the same share of the composition. */
+  @media (max-width: 640px) {
+    .masthead {
+      --portrait-at: 2.06;
+      --portrait-w: 1.62;
+      --portrait-aspect: 1.087;
+      --portrait-eye: 0.329;
+    }
   }
 
   /* Display headline used in the hero and section statements */
@@ -177,11 +252,21 @@
     line-height: 0.94;
   }
 
+  /* Editorial rule — a hairline that fades to the right */
+  .hairline {
+    background: linear-gradient(
+      90deg,
+      rgba(244, 239, 228, 0.22),
+      rgba(244, 239, 228, 0.06) 60%,
+      transparent
+    );
+  }
+
   .grid-bg {
     background-image:
-      linear-gradient(rgba(129, 140, 248, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(129, 140, 248, 0.06) 1px, transparent 1px);
-    background-size: 64px 64px;
+      linear-gradient(rgba(244, 239, 228, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244, 239, 228, 0.045) 1px, transparent 1px);
+    background-size: 72px 72px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 15%, transparent 72%);
     -webkit-mask-image: radial-gradient(
       ellipse 80% 60% at 50% 0%,
@@ -195,21 +280,21 @@
     align-items: center;
     gap: 0.4rem;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(244, 239, 228, 0.1);
+    background: rgba(244, 239, 228, 0.035);
     padding: 0.3rem 0.7rem;
     font-size: 0.75rem;
     line-height: 1;
-    color: #b9b9cf;
+    color: #b8b2a5;
     transition:
       border-color 0.25s ease,
       background-color 0.25s ease,
       color 0.25s ease;
   }
   .chip:hover {
-    border-color: rgba(129, 140, 248, 0.45);
-    background: rgba(129, 140, 248, 0.1);
-    color: var(--color-nebula-200);
+    border-color: rgba(204, 143, 44, 0.5);
+    background: rgba(204, 143, 44, 0.1);
+    color: var(--color-ember-200);
   }
 
   .btn-primary {
@@ -218,20 +303,20 @@
     justify-content: center;
     gap: 0.5rem;
     border-radius: 0.75rem;
-    background: linear-gradient(135deg, var(--color-nebula-500), var(--color-violet-600));
+    background: linear-gradient(135deg, var(--color-ember-400), var(--color-ember-600));
     padding: 0.8rem 1.4rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #fff;
-    box-shadow: 0 12px 34px -14px rgba(99, 102, 241, 0.95);
+    color: #17130a;
+    box-shadow: 0 12px 34px -14px rgba(204, 143, 44, 0.85);
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease,
       filter 0.2s ease;
   }
   .btn-primary:hover {
-    filter: brightness(1.1);
-    box-shadow: 0 16px 44px -14px rgba(139, 92, 246, 0.95);
+    filter: brightness(1.08);
+    box-shadow: 0 16px 44px -14px rgba(204, 143, 44, 0.95);
   }
 
   .btn-ghost {
@@ -240,20 +325,20 @@
     justify-content: center;
     gap: 0.5rem;
     border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(244, 239, 228, 0.14);
+    background: rgba(244, 239, 228, 0.03);
     padding: 0.8rem 1.4rem;
     font-size: 0.875rem;
     font-weight: 500;
-    color: #e6e6f0;
+    color: #e6dfd0;
     transition:
       border-color 0.25s ease,
       background-color 0.25s ease,
       transform 0.2s ease;
   }
   .btn-ghost:hover {
-    border-color: rgba(129, 140, 248, 0.5);
-    background: rgba(129, 140, 248, 0.08);
+    border-color: rgba(204, 143, 44, 0.55);
+    background: rgba(204, 143, 44, 0.08);
   }
 
   .eyebrow {
@@ -261,7 +346,28 @@
     font-size: 0.6875rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(165, 180, 252, 0.7);
+    color: rgba(237, 201, 131, 0.72);
+  }
+
+  /* Editorial alignment mark — the crosshair the reference layouts use to
+     register a header against the page grid. */
+  .mark-plus {
+    position: relative;
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    color: rgba(244, 239, 228, 0.3);
+  }
+  .mark-plus::before,
+  .mark-plus::after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto 0;
+    height: 1px;
+    background: currentColor;
+  }
+  .mark-plus::after {
+    transform: rotate(90deg);
   }
 
   /* Numbered index label, e.g. "01" in a bordered square */
@@ -272,12 +378,12 @@
     min-width: 2.25rem;
     height: 2.25rem;
     border-radius: 0.5rem;
-    border: 1px solid rgba(129, 140, 248, 0.28);
-    background: rgba(129, 140, 248, 0.08);
+    border: 1px solid rgba(204, 143, 44, 0.3);
+    background: rgba(204, 143, 44, 0.08);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--color-nebula-300);
+    color: var(--color-ember-300);
   }
 }
 

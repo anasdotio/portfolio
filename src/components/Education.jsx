@@ -6,7 +6,7 @@ import Reveal from "./ui/Reveal";
 
 const Timeline = ({ items, icon: Icon, accent }) => (
   <div className="relative">
-    <span className="absolute bottom-4 left-[11px] top-4 w-px bg-gradient-to-b from-nebula-500/50 via-violet-500/25 to-transparent" />
+    <span className="absolute bottom-4 left-[11px] top-4 w-px bg-gradient-to-b from-ember-500/50 via-cobalt-500/25 to-transparent" />
 
     <ul className="space-y-5">
       {items.map((item, i) => (
@@ -15,34 +15,34 @@ const Timeline = ({ items, icon: Icon, accent }) => (
             <span
               className={`absolute left-0 top-4 flex h-6 w-6 items-center justify-center rounded-full border ${
                 accent
-                  ? "border-nebula-500/40 bg-nebula-500/15 text-nebula-300"
-                  : "border-violet-500/40 bg-violet-500/15 text-violet-300"
+                  ? "border-ember-500/40 bg-ember-500/15 text-ember-300"
+                  : "border-cobalt-500/40 bg-cobalt-500/15 text-cobalt-300"
               }`}
             >
               <Icon className="h-3 w-3" />
             </span>
 
             <SpotlightCard className="surface p-5">
-              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-bone-500">
                 {item.year}
               </p>
 
-              <h3 className="mt-2 text-base font-semibold leading-snug text-white">
+              <h3 className="mt-2 text-base font-semibold leading-snug text-bone-100">
                 {item.title}
                 {item.company && (
-                  <span className="text-nebula-300"> — {item.company}</span>
+                  <span className="text-ember-300"> — {item.company}</span>
                 )}
               </h3>
 
               {item.location && (
-                <p className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-slate-500">
-                  <MapPin className="h-3 w-3 text-nebula-500" />
+                <p className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-bone-500">
+                  <MapPin className="h-3 w-3 text-ember-500" />
                   {item.location}
                 </p>
               )}
 
               {item.description && (
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                <p className="mt-2 text-sm leading-relaxed text-bone-400">
                   {item.description}
                 </p>
               )}
@@ -52,9 +52,9 @@ const Timeline = ({ items, icon: Icon, accent }) => (
                   {item.points.map((point) => (
                     <li
                       key={point}
-                      className="flex gap-2.5 text-sm leading-relaxed text-slate-400"
+                      className="flex gap-2.5 text-sm leading-relaxed text-bone-400"
                     >
-                      <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-nebula-400" />
+                      <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-ember-400" />
                       {point}
                     </li>
                   ))}
@@ -78,8 +78,8 @@ const Education = () => (
     <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
       <div>
         <div className="mb-6 flex items-center gap-2.5">
-          <GraduationCap className="h-4 w-4 text-nebula-400" />
-          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300">
+          <GraduationCap className="h-4 w-4 text-ember-400" />
+          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-bone-300">
             Education
           </h3>
         </div>
@@ -88,8 +88,8 @@ const Education = () => (
 
       <div>
         <div className="mb-6 flex items-center gap-2.5">
-          <Briefcase className="h-4 w-4 text-violet-400" />
-          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300">
+          <Briefcase className="h-4 w-4 text-cobalt-400" />
+          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-bone-300">
             Experience
           </h3>
         </div>

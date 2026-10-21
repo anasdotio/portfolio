@@ -9,14 +9,33 @@ export const profile = {
   email: "anaskhan.cs01@gmail.com",
   resume: "/Anas-Resume.pdf",
   availability: "Open to backend & full-stack roles",
-  headline: ["Anas Khan", "builds systems", "that scale."],
+  // The masthead: one oversized line that fills the measure, per the hero
+  // references. Characters listed in `outline` are stroked rather than
+  // filled, so the portrait reads through them while the rest of the name
+  // stays solid.
+  //
+  // The portrait's placement against the type lives in the `.masthead`
+  // rules in index.css, where the type's own metrics are available.
+  headline: ["Anas Khan"],
+  outline: {
+    "Anas Khan": [3, 5],
+  },
+  statement: ["builds systems", "that scale."],
   summary:
     "I design scalable APIs and microservice-based systems, then ship them with clean architecture, sensible observability, and code the next engineer can trust.",
   photo: {
-    src: new URL("../assets/profile-cutout.png", import.meta.url).href,
+    src: new URL("../assets/profile-circle.png", import.meta.url).href,
     alt: "Anas Khan, backend and full-stack developer",
-    width: 503,
-    height: 689,
+    width: 560,
+    height: 560,
+  },
+  // Full cutout on transparency — the masthead fuses the portrait with the
+  // display type, so it needs the subject on alpha rather than a circle.
+  cutout: {
+    src: new URL("../assets/profile-cutout.png", import.meta.url).href,
+    alt: "Anas Khan",
+    width: 761,
+    height: 827,
   },
 };
 
@@ -57,7 +76,7 @@ export const stats = [
   { value: "04", label: "Core domains" },
   { value: "02", label: "Products shipped" },
   { value: "20+", label: "Technologies" },
-  { value: "2022", label: "First role" },
+  { value: "B.Tech", label: "CSE, 2025" },
 ];
 
 export const marqueeItems = [
@@ -78,7 +97,7 @@ export const marqueeItems = [
 ];
 
 export const about = {
-  eyebrow: "About / Manifesto",
+  eyebrow: "About / 01",
   statement: ["I don't just write code.", "I engineer outcomes."],
   body: [
     "I build scalable web applications and backend services that solve real business problems. With hands-on experience across Node.js, Express, MongoDB and AWS, I focus on secure, maintainable software while continuously improving performance and developer experience.",
@@ -184,7 +203,7 @@ export const projects = [
 ];
 
 export const process = {
-  eyebrow: "Process / 05",
+  eyebrow: "Process / 04",
   title: "How I build software",
   description:
     "A repeatable path from a vague requirement to something running in production.",
@@ -216,9 +235,9 @@ export const journey = {
   education: [
     {
       title: "B.Tech in Computer Science & Engineering",
-      year: "2023 — Present",
+      year: "2023 — 2025",
       description:
-        "Currently pursuing a Bachelor's degree in Computer Science & Engineering.",
+        "Completed a Bachelor's degree in Computer Science & Engineering with a focus on backend systems and databases.",
     },
     {
       title: "Diploma in Computer Science & Engineering",

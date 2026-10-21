@@ -13,7 +13,7 @@ import ClosingCta from "./components/ClosingCta";
 import Footer from "./components/Footer";
 
 const App = () => (
-  <div className="relative min-h-screen bg-ink-950 text-slate-200">
+  <div className="relative min-h-screen bg-ink-950 text-bone-200">
     <Background />
     <Navbar />
 

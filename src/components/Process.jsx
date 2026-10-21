@@ -15,19 +15,19 @@ const Process = () => (
           <div className="group relative h-full">
             {/* connector line */}
             {i < process.steps.length - 1 && (
-              <span className="absolute left-6 top-3 hidden h-px w-full bg-gradient-to-r from-nebula-500/30 to-transparent lg:block" />
+              <span className="absolute left-6 top-3 hidden h-px w-full bg-gradient-to-r from-ember-500/30 to-transparent lg:block" />
             )}
 
             <div className="relative">
               <div className="flex items-center gap-3">
-                <span className="index-num transition-colors duration-300 group-hover:border-nebula-400/60 group-hover:bg-nebula-500/15">
+                <span className="index-num transition-colors duration-300 group-hover:border-ember-400/60 group-hover:bg-ember-500/15">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="text-base font-semibold text-white">
+                <h3 className="text-base font-semibold text-bone-100">
                   {step.title}
                 </h3>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-slate-400">
+              <p className="mt-4 text-sm leading-relaxed text-bone-400">
                 {step.text}
               </p>
             </div>
