@@ -39,6 +39,16 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
+  const handleMobileNav = (event, id) => {
+    event.preventDefault();
+    setMenuOpen(false);
+
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${id}`);
+    });
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -53,12 +63,9 @@ const Navbar = () => {
           className="group flex items-center"
           aria-label={`${profile.name} — home`}
         >
-          <span className="hidden sm:block">
-            <span className="block text-sm font-semibold leading-tight text-bone-100">
+          <span className="block">
+            <span className="text-sm font-semibold leading-tight text-bone-100">
               {profile.name}
-            </span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-bone-500">
-              {profile.role}
             </span>
           </span>
         </a>
@@ -128,7 +135,7 @@ const Navbar = () => {
                 >
                   <a
                     href={`#${item.id}`}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={(event) => handleMobileNav(event, item.id)}
                     className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm transition-colors ${
                       active === item.id
                         ? "bg-ember-500/10 text-bone-100"

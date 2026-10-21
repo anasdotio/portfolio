@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+/* Anton is the display face for the hero name, and it is the largest
+   piece of type on the page. Loaded from Google Fonts with `swap`, the
+   fallback reflows the name and the whole hero shifts. Self-hosting it
+   and preloading it in index.html gets it in before first paint. */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/anton-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
 /* ------------------------------------------------------------------
    Editorial portfolio system — warm near-black ground, bone display
    type, amber accent.
@@ -188,7 +203,7 @@
     color: transparent;
   }
 
-  /* Oversized condensed masthead type */
+  /* Condensed display type used for the hero name and stat values */
   .wordmark {
     font-family: var(--font-display);
     font-weight: 400;
@@ -196,79 +211,6 @@
     letter-spacing: 0.005em;
     line-height: 0.8;
   }
-
-  /* Outlined display type — the portrait reads through the letterforms.
-     The stroke scales with the type so it stays a hairline at every size. */
-  .text-outline {
-    color: transparent;
-    -webkit-text-stroke: max(1px, 0.009em) var(--color-bone-100);
-  }
-
-  /* ---------- masthead ----------------------------------------------
-     The wordmark and the portrait are one composition: the type sets the
-     scale, and the portrait is placed against it in `em` so the head
-     lands on the same letters at every viewport width.
-
-     This composition needs a wide measure, so it only applies from
-     tablet up — the phone hero in HeroSection.jsx is a separate,
-     ordinary layout.
-
-     --masthead    the display size
-     --portrait-at the x of the head's centre
-     --portrait-w  the cutout's width
-     --portrait-aspect  its height-to-width ratio
-     --portrait-eye    the eye line, as a fraction of its height
-     --cap-mid     the middle of the cap band, in em from the top of the
-                   masthead box — the eye line is aligned to this        */
-  .masthead {
-    --masthead: clamp(3.4rem, 18.5vw, 15rem);
-    --portrait-at: 2.05;
-    --portrait-w: 1.42;
-    --portrait-aspect: 1.087;
-    --portrait-eye: 0.329;
-    --cap-mid: 0.392;
-    --portrait-shift: -0.40em;
-    position: relative;
-    font-size: var(--masthead);
-  }
-
-  .masthead__portrait {
-    position: absolute;
-    z-index: 30;
-    top: calc(
-      var(--masthead) * var(--portrait-eye) * var(--portrait-aspect) -
-        var(--masthead) * var(--cap-mid) + var(--portrait-shift)
-    );
-    left: calc(var(--portrait-at) * 1em);
-    width: min(
-      calc(var(--masthead) * var(--portrait-w)),
-      calc(100% - var(--portrait-at) * 1em)
-    );
-    max-width: 100%;
-  }
-
-  /* The phone hero's portrait. It is a head crop, so it is sized by its
-     own width and given a soft mask at the bottom so the neck dissolves
-     into the page rather than ending on a hard edge. The mask reaches
-     further down than the asset's own alpha fade so the two blend into
-     one smooth falloff. */
-  .hero-portrait {
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      #000 0,
-      #000 62%,
-      rgba(0, 0, 0, 0.55) 84%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      #000 0,
-      #000 62%,
-      rgba(0, 0, 0, 0.55) 84%,
-      transparent 100%
-    );
-  }
-
 
   /* Display headline used in the hero and section statements */
   .display {

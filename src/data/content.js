@@ -8,17 +8,9 @@ export const profile = {
   email: "anaskhan.cs01@gmail.com",
   resume: "/Anas-Resume.pdf",
   availability: "Open to backend & full-stack roles",
-  // The masthead: one oversized line that fills the measure, per the hero
-  // references. Characters listed in `outline` are stroked rather than
-  // filled, so the portrait reads through them while the rest of the name
-  // stays solid.
-  //
-  // The portrait's placement against the type lives in the `.masthead`
-  // rules in index.css, where the type's own metrics are available.
+  // The hero name remains in the content model so it can be styled
+  // independently from the supporting copy.
   headline: ["Anas Khan"],
-  outline: {
-    "Anas Khan": [3, 5],
-  },
   statement: ["builds systems", "that scale."],
   summary:
     "I design scalable APIs and microservice-based systems, then ship them with clean architecture, sensible observability, and code the next engineer can trust.",
@@ -28,17 +20,14 @@ export const profile = {
     width: 560,
     height: 560,
   },
-  // Full cutout on transparency — the masthead fuses the portrait with the
-  // display type, so it needs the subject on alpha rather than a circle.
+  // Full cutout on transparency for the larger responsive hero portrait.
   cutout: {
     src: new URL("../assets/profile-cutout.png", import.meta.url).href,
     alt: "Anas Khan",
     width: 761,
     height: 827,
   },
-  // A tighter head crop for the phone hero, where the portrait stands on
-  // its own instead of dissolving into the wordmark. Same subject, cropped
-  // to the head with a short fade at the neck.
+  // A tighter crop for smaller screens, where the portrait has less room.
   head: {
     src: new URL("../assets/profile-head.png", import.meta.url).href,
     alt: "Anas Khan",
