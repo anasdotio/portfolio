@@ -3,7 +3,6 @@
 
 export const profile = {
   name: "Anas Khan",
-  initials: "AK",
   role: "Backend / Full-Stack Developer",
   location: "India",
   email: "anaskhan.cs01@gmail.com",

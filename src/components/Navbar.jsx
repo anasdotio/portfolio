@@ -50,12 +50,9 @@ const Navbar = () => {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <a
           href="#home"
-          className="group flex items-center gap-3"
+          className="group flex items-center"
           aria-label={`${profile.name} — home`}
         >
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-ember-500 to-cobalt-600 text-sm font-bold text-bone-100 shadow-lg shadow-ember-600/30 transition-transform duration-300 group-hover:scale-105">
-            {profile.initials}
-          </span>
           <span className="hidden sm:block">
             <span className="block text-sm font-semibold leading-tight text-bone-100">
               {profile.name}

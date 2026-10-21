@@ -7,10 +7,7 @@ const Footer = () => (
       <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         {/* brand */}
         <div>
-          <a href="#home" className="group inline-flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-ember-500 to-cobalt-600 text-sm font-bold text-bone-100 transition-transform duration-300 group-hover:scale-105">
-              {profile.initials}
-            </span>
+          <a href="#home" className="group inline-flex items-center">
             <span className="text-base font-semibold text-bone-100">
               {profile.name}
             </span>
