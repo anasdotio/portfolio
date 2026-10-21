@@ -34,7 +34,7 @@ const TypingRole = () => {
   return (
     <p
       aria-label={profile.role}
-      className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-bone-500 sm:text-xs"
+      className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-bone-500 sm:text-xs md:text-left"
     >
       {text}
       <span aria-hidden="true" className="ml-1 text-ember-400 animate-pulse">
@@ -154,25 +154,29 @@ const Portrait = () => (
       aria-hidden="true"
       className="absolute inset-x-8 top-4 h-48 bg-[radial-gradient(ellipse_55%_50%_at_50%_22%,rgba(204,143,44,0.3),transparent_70%)] blur-2xl"
     />
-    <picture>
-      <source
-        media="(min-width: 768px)"
-        srcSet={profile.cutout.src}
-        width={profile.cutout.width}
-        height={profile.cutout.height}
-      />
-      <img
-        src={profile.head.src}
-        alt={profile.head.alt}
-        width={profile.head.width}
-        height={profile.head.height}
-        className="relative mx-auto max-h-[24rem] w-full object-contain sm:max-h-[32rem]"
-        style={{
-          filter:
-            "grayscale(1) contrast(1.16) brightness(0.95) sepia(0.55) saturate(1.25) hue-rotate(-14deg) drop-shadow(0 24px 48px rgba(0,0,0,0.55))",
-        }}
-      />
-    </picture>
+    <div
+      aria-hidden="true"
+      className="absolute left-1/2 top-[42%] aspect-square w-[104%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-ember-300/35 bg-[radial-gradient(circle_at_50%_38%,rgba(204,143,44,0.16),transparent_62%)] shadow-[0_0_0_1px_rgba(244,239,228,0.05),0_0_70px_rgba(204,143,44,0.18)]"
+    />
+    <div
+      aria-hidden="true"
+      className="absolute left-1/2 top-[42%] aspect-square w-[112%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-bone-100/15"
+    />
+    <div className="relative z-10 mx-auto aspect-square w-[88%] overflow-hidden rounded-full border border-bone-100/15 bg-ink-950/40 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
+      <picture>
+        <img
+          src={profile.cutout.src}
+          alt={profile.cutout.alt}
+          width={profile.cutout.width}
+          height={profile.cutout.height}
+          className="h-full w-full object-contain object-top"
+          style={{
+            filter:
+              "grayscale(1) contrast(1.16) brightness(0.95) sepia(0.55) saturate(1.25) hue-rotate(-14deg)",
+          }}
+        />
+      </picture>
+    </div>
   </motion.div>
 );
 
@@ -197,7 +201,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.06, ease }}
-            className="wordmark text-center text-[3.5rem] text-bone-100 sm:text-8xl lg:text-9xl"
+            className="wordmark text-center text-[3.5rem] text-bone-100 sm:text-8xl md:text-left lg:text-9xl"
           >
             {profile.name}
           </motion.h1>
