@@ -1,48 +1,102 @@
-import React from "react";
-import TimelineCard from "./Card/TimeLineCard";
-import SectionTitle from "./Card/SectionTitle";
+import { Briefcase, GraduationCap, MapPin } from "lucide-react";
+import { journey } from "../data/content";
+import Section from "./ui/Section";
+import SpotlightCard from "./ui/SpotlightCard";
+import Reveal from "./ui/Reveal";
 
-const Education = () => {
-  return (
-    <div className="mt-20 text-white grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-16">
-      {/* LEFT - EDUCATION */}
+const Timeline = ({ items, icon: Icon, accent }) => (
+  <div className="relative">
+    <span className="absolute bottom-4 left-[11px] top-4 w-px bg-gradient-to-b from-nebula-500/50 via-violet-500/25 to-transparent" />
+
+    <ul className="space-y-5">
+      {items.map((item, i) => (
+        <Reveal as="li" key={item.title} delay={i * 0.1}>
+          <div className="relative pl-10">
+            <span
+              className={`absolute left-0 top-4 flex h-6 w-6 items-center justify-center rounded-full border ${
+                accent
+                  ? "border-nebula-500/40 bg-nebula-500/15 text-nebula-300"
+                  : "border-violet-500/40 bg-violet-500/15 text-violet-300"
+              }`}
+            >
+              <Icon className="h-3 w-3" />
+            </span>
+
+            <SpotlightCard className="surface p-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500">
+                {item.year}
+              </p>
+
+              <h3 className="mt-2 text-base font-semibold leading-snug text-white">
+                {item.title}
+                {item.company && (
+                  <span className="text-nebula-300"> — {item.company}</span>
+                )}
+              </h3>
+
+              {item.location && (
+                <p className="mt-1.5 inline-flex items-center gap-1.5 text-xs text-slate-500">
+                  <MapPin className="h-3 w-3 text-nebula-500" />
+                  {item.location}
+                </p>
+              )}
+
+              {item.description && (
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                  {item.description}
+                </p>
+              )}
+
+              {item.points && (
+                <ul className="mt-3 space-y-2">
+                  {item.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex gap-2.5 text-sm leading-relaxed text-slate-400"
+                    >
+                      <span className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full bg-nebula-400" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </SpotlightCard>
+          </div>
+        </Reveal>
+      ))}
+    </ul>
+  </div>
+);
+
+const Education = () => (
+  <Section
+    id="journey"
+    eyebrow="Journey / 05"
+    title="Education & Experience"
+    description="Where I studied, and where I have put the theory to work."
+  >
+    <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
       <div>
-        <SectionTitle title="Education" />
-
-        <div className="relative border-l-2 border-yellow-500 pl-8 space-y-10">
-          <TimelineCard
-            title="Bachelor of Technology in Computer Science & Engineering"
-            year="2023 - Present"
-            description="I am currently pursuing my Bachelor's degree in Computer Science & Engineering."
-          />
-
-          <TimelineCard
-            title="Diploma in Computer Science & Engineering"
-            year="2021 - 2023"
-            description="I completed my Diploma in Computer Science & Engineering."
-          />
+        <div className="mb-6 flex items-center gap-2.5">
+          <GraduationCap className="h-4 w-4 text-nebula-400" />
+          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300">
+            Education
+          </h3>
         </div>
+        <Timeline items={journey.education} icon={GraduationCap} />
       </div>
 
-      {/* RIGHT - EXPERIENCE */}
       <div>
-        <SectionTitle title="Experience" />
-
-        <div className="relative border-l-2 border-yellow-500 pl-8 space-y-10">
-          <TimelineCard
-            title="Frontend Developer Intern"
-            year="Featherone - Jul 2022 - Aug 2022"
-            description="I worked as a frontend developer intern at Featherone. I learned about the frontend technologies like React.js and Tailwind CSS."
-          />
-          <TimelineCard
-            title="Student Coordinator - Techfest"
-            year="2025"
-            description="Led a team of 20+ students to organize the annual techfest, managing technical events, workshops, and 300+ participants."
-          />
+        <div className="mb-6 flex items-center gap-2.5">
+          <Briefcase className="h-4 w-4 text-violet-400" />
+          <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300">
+            Experience
+          </h3>
         </div>
+        <Timeline items={journey.experience} icon={Briefcase} />
       </div>
     </div>
-  );
-};
+  </Section>
+);
 
 export default Education;

@@ -1,0 +1,463 @@
+{
+  "title": "Manish Kumar — Software Developer & Software Engineer | Full Stack & SDET",
+  "body": {
+    "background-color": "rgb(5, 5, 5)",
+    "color": "rgb(255, 255, 255)",
+    "font-family": "Manrope, sans-serif"
+  },
+  "sections": [
+    {
+      "tag": "SECTION",
+      "id": "",
+      "cls": "",
+      "h": 0,
+      "text": ""
+    },
+    {
+      "tag": "HEADER",
+      "id": "",
+      "cls": "fixed top-0 left-0 right-0 z-50",
+      "h": 62,
+      "text": "Manish.\nAbout\nSkills\nExperience\nProjects\nProblem Solving\nAchievements\nContact\nResume"
+    },
+    {
+      "tag": "SECTION",
+      "id": "hero",
+      "cls": "relative min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden",
+      "h": 900,
+      "text": "Open to Full-Time & SDE / SDET roles\nManish Kumar\nbuilds software\nthat ships.\n> Backend Engineer (Java · Spring_\n\nI design scalable full-stack systems and build"
+    },
+    {
+      "tag": "SECTION",
+      "id": "about",
+      "cls": "relative py-16 sm:py-24 md:py-32 overflow-hidden",
+      "h": 1855,
+      "text": "ABOUT / MANIFESTO\nI don't just write code.\nI engineer outcomes.\n\nI build scalable web applications and robust test automation frameworks that solve real busines"
+    },
+    {
+      "tag": "SECTION",
+      "id": "skills",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5",
+      "h": 1277,
+      "text": "TECHNICAL SKILLS\nA full-stack + SDET toolkit\n\nCategorized across the stack — from backend services and frontend interfaces to the automation that keeps them rel"
+    },
+    {
+      "tag": "SECTION",
+      "id": "experience",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5",
+      "h": 1609,
+      "text": "EXPERIENCE\nWhere I've delivered\nCognizant\n\nProgrammer Analyst Trainee\n\nMarch 2026 — July 2026\nCoimbatore, India\nLed project delivery & automated 25+ test cases\n"
+    },
+    {
+      "tag": "SECTION",
+      "id": "projects",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5",
+      "h": 3970,
+      "text": "FEATURED PROJECTS\nProduction case studies\n\nThree end-to-end builds across healthcare, HR, and e-commerce — each framed as problem → solution → impact.\n\nFull Sta"
+    },
+    {
+      "tag": "SECTION",
+      "id": "problem-solving",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5 overflow-hidden",
+      "h": 999,
+      "text": "PROBLEM SOLVING\nEngineering Dashboard\n\n300+ algorithmic problems solved in Java. Consistent practice sharpens the analytical thinking behind optimized, scalable"
+    },
+    {
+      "tag": "SECTION",
+      "id": "achievements",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5",
+      "h": 2350,
+      "text": "CREDENTIALS\nProof of work\n300+ DSA Problems\n\nSolved across arrays, trees, graphs, DP & more.\n\n3 Production Apps\n\nFull-stack projects across healthcare, HR & e-c"
+    },
+    {
+      "tag": "SECTION",
+      "id": "",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5",
+      "h": 817,
+      "text": "TECH STACK\nTools I reach for\nJava\nJavaScript\nSQL\nReact\nNext.js\nAngular\nNode.js\nExpress\nSpring Boot\nMongoDB\nMySQL\nTailwind\nSelenium\nTestNG\nREST Assured\nCucumber\n"
+    },
+    {
+      "tag": "SECTION",
+      "id": "contact",
+      "cls": "relative py-16 sm:py-24 md:py-32 border-t border-white/5 overflow-hidden",
+      "h": 1165,
+      "text": "RESUME\nGrab my ATS-friendly resume\n\nOne page, keyword-optimized, and recruiter-ready. Preview it or download the PDF.\n\nPreview\nDownload PDF\nCONTACT\nLet's build "
+    }
+  ],
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "Manish Kumar\nbuilds software\nthat ships.",
+      "size": "72px",
+      "weight": "800",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "I don't just write code.\nI engineer outcomes.",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Engineering with intent",
+      "size": "20px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Quality is not a phase",
+      "size": "20px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Full lifecycle ownership",
+      "size": "20px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Always compounding",
+      "size": "20px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "A workflow built for reliability",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Evidence, not adjectives",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "A full-stack + SDET toolkit",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Backend",
+      "size": "18px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Frontend",
+      "size": "18px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Testing / SDET",
+      "size": "18px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Databases",
+      "size": "18px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "DevOps & Tools",
+      "size": "18px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Concepts",
+      "size": "18px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Where I've delivered",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Production case studies",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "MediConnect",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Onboarding Management System",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "SwiftKart",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Medical Insurance Cost Prediction",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "GitHub Explorer",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Engineering Dashboard",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Proof of work",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "300+ DSA Problems",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "3 Production Apps",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Frameworks From Scratch",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "8.48 CGPA",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Agile Team Experience",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "SDE Internship",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Machine Learning & Data Science",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Software Development Engineer Internship",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Full Stack Web Development Internship",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "B.Tech — Computer Science & Engineering",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Diploma — Computer Science (Honors)",
+      "size": "16px",
+      "weight": "600",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Tools I reach for",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Building in the open",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H3",
+      "text": "Grab my ATS-friendly resume",
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "H2",
+      "text": "Let's build something great together",
+      "size": "48px",
+      "weight": "700",
+      "color": "rgb(255, 255, 255)"
+    }
+  ],
+  "topColors": [
+    [
+      "rgb(255, 255, 255)",
+      565
+    ],
+    [
+      "rgb(0, 240, 255)",
+      284
+    ],
+    [
+      "rgba(255, 255, 255, 0.6)",
+      150
+    ],
+    [
+      "rgba(255, 255, 255, 0.4)",
+      102
+    ],
+    [
+      "rgba(255, 255, 255, 0.7)",
+      93
+    ],
+    [
+      "rgb(0, 0, 0)",
+      90
+    ],
+    [
+      "rgba(255, 255, 255, 0.5)",
+      47
+    ],
+    [
+      "rgba(0, 240, 255, 0.9)",
+      29
+    ],
+    [
+      "rgba(255, 255, 255, 0.65)",
+      28
+    ],
+    [
+      "rgba(0, 0, 0, 0)",
+      16
+    ],
+    [
+      "rgba(255, 255, 255, 0.8)",
+      13
+    ],
+    [
+      "rgb(74, 222, 128)",
+      9
+    ]
+  ],
+  "topBackgrounds": [
+    [
+      "rgba(255, 255, 255, 0.04)",
+      136
+    ],
+    [
+      "rgba(255, 255, 255, 0.03)",
+      92
+    ],
+    [
+      "rgb(0, 240, 255)",
+      45
+    ],
+    [
+      "rgba(0, 240, 255, 0.05)",
+      37
+    ],
+    [
+      "rgba(0, 240, 255, 0.1)",
+      28
+    ],
+    [
+      "rgba(255, 255, 255, 0.1)",
+      8
+    ],
+    [
+      "rgb(10, 10, 10)",
+      7
+    ],
+    [
+      "rgba(34, 197, 94, 0.1)",
+      6
+    ],
+    [
+      "rgb(74, 222, 128)",
+      5
+    ],
+    [
+      "rgba(0, 0, 0, 0.5)",
+      5
+    ],
+    [
+      "rgba(0, 240, 255, 0.3)",
+      3
+    ],
+    [
+      "rgb(5, 5, 5)",
+      2
+    ]
+  ],
+  "bodyText": "Manish.\nAbout\nSkills\nExperience\nProjects\nProblem Solving\nAchievements\nContact\nResume\nOpen to Full-Time & SDE / SDET roles\nManish Kumar\nbuilds software\nthat ships.\n> Backend Engineer (Java · Spring_\n\nI design scalable full-stack systems and build automation frameworks that ship reliable, production-ready software.\n\nView Projects\nDownload Resume\nSoftware Engineer @ Cognizant\nJava · Spring Boot\nMERN Stack\nSelenium · SDET\n300+ DSA Solved\nAligarh, Uttar Pradesh, India\nSoftware Engineer @ Cognizant\n300+\nDSA Problems Solved\n3\nProduction Projects\n25+\nAutomated Test Cases\n8.48\nCGPA / 10\nABOUT / MANIFESTO\nI don't just write code.\nI engineer outcomes.\n\nI build scalable web applications and robust test automation frameworks that solve real business problems. With hands-on experience across Java, Spring Boot, React, Node.js, and Selenium, I focus on secure, maintainable software while continuously improving performance, quality, and user experience.\n\n01\nEngineering with intent\n\nGreat software isn't just working code — it's understanding users, designing scalable architecture, and writing code the next engineer can trust. I optimise for clarity and maintainability, not cleverness.\n\n02\nQuality is not a phase\n\nMy SDET background means I think about reliability from day one. I build features and the automated tests that protect them — Selenium, TestNG, Cucumber, REST Assured — so releases stay confident.\n\n03\nFull lifecycle ownership\n\nFrom designing REST APIs and building frontend interfaces to automating tests and deploying to production, I contribute across the complete SDLC and adapt fast to new codebases and teams.\n\n04\nAlways compounding\n\n300+ DSA problems and constant learning keep my problem-solving sharp. I'm currently going deeper into Docker, CI/CD, and system design to build for scale.\n\nFull Stack /\nSpring Boot /\nTest Automation /\nClean Code /\nREST APIs /\nProblem Solving /\nAgile /\nProduction Ready /\nFull Stack /\nSpring Boot /\nTest Automation /\nClean Code /\nREST APIs /\nProblem Solving /\nAgile /\nProduction Ready /\nHOW I BUILD SOFTWARE\nA workflow built for reliability\n01\nRequirements\n\nClarify the business problem, users, and acceptance criteria before writing code.\n\n02\nDesign\n\nModel data, define REST contracts, and choose a scalable, maintainable architecture.\n\n03\nImplement\n\nWrite clean, modular code with security (JWT, RBAC) and performance in mind.\n\n04\nTest\n\nAutomate UI & API coverage — Selenium, TestNG, REST Assured, BDD with Cucumber.\n\n05\nDeploy\n\nShip to production, monitor, and iterate based on real feedback.\n\nWHY HIRE ME\nEvidence, not adjectives\nDual strength: builds production features and the automation that protects them (SDET + Full Stack).\nShips secure backends — JWT auth, RBAC, and clean REST API design across Java & Node.\nDelivered 3 end-to-end applications across healthcare, HR, and e-commerce domains.\nBuilt UI & API automation frameworks from scratch, automating 25+ regression cases.\nStrong CS fundamentals — 300+ DSA problems, 8.48 CGPA.\nAgil"
+}

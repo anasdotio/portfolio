@@ -1,54 +1,293 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
+/* ------------------------------------------------------------------
+   Nebula design system — dark-only, indigo/violet.
+   Inspired by editorial portfolio references: oversized display type,
+   numbered section markers, hairline dividers and restrained glow.
+------------------------------------------------------------------- */
 @theme {
-  --color-yellow-200: #ffe3b3;
-  --color-yellow-300: #fbb931;
-  --color-yellow-400: #f88f22;
-  --color-yellow-500: #ea6113;
-  --color-yellow-600: #c84c0d;
-  --color-yellow-700: #a83d0a;
-  --color-purple-400: #fbb931;
-  --color-purple-500: #ea6113;
-  --color-purple-200: #ffe3b3;
-  --color-zinc-900: #111111;
-  --color-zinc-950: #050505;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Surfaces */
+  --color-ink-950: #050508;
+  --color-ink-900: #0a0a12;
+  --color-ink-800: #12121f;
+  --color-ink-700: #1b1b2e;
+
+  /* Accent — nebula */
+  --color-nebula-200: #e0e7ff;
+  --color-nebula-300: #c7d2fe;
+  --color-nebula-400: #a5b4fc;
+  --color-nebula-500: #818cf8;
+  --color-nebula-600: #6366f1;
+  --color-nebula-700: #4f46e5;
+
+  /* Accent — violet */
+  --color-violet-300: #d8b4fe;
+  --color-violet-400: #c084fc;
+  --color-violet-500: #a855f7;
+  --color-violet-600: #9333ea;
+
+  /* Motion */
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-halo: halo 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-drift: drift 24s ease-in-out infinite alternate;
+  --animate-scan: scan 5s linear infinite;
+  --animate-spin-slow: spin 34s linear infinite;
 }
 
-@keyframes fade-in {
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes halo {
   0% {
-    background-position: 0% 50%;
+    transform: scale(1);
+    opacity: 0.55;
   }
-  50% {
-    background-position: 100% 50%;
-  }
+  70%,
   100% {
-    background-position: 0% 50%;
+    transform: scale(2.2);
+    opacity: 0;
   }
 }
 
-.bg-animate {
-  background: linear-gradient(
-    120deg,
-    rgba(234, 97, 19, 0.08),
-    rgba(248, 143, 34, 0.18),
-    rgba(234, 97, 19, 0.08)
-  );
-
-  background-size: 200% 200%;
-  animation: fade-in 4s linear infinite;
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(5%, -7%, 0) scale(1.18);
+  }
 }
 
-.grid-background {
-  background-image:
-    linear-gradient(rgba(234, 97, 19, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(234, 97, 19, 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
-  -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    black 20%,
-    transparent 78%
-  );
-  opacity: 0.7;
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: #e6e6f0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(129, 140, 248, 0.35);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink-950);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #23233a;
+    border-radius: 99px;
+    border: 2px solid var(--color-ink-950);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-nebula-600);
+  }
+
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+@layer components {
+  .glass {
+    background: color-mix(in oklab, var(--color-ink-950) 72%, transparent);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+  }
+
+  .surface {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.012)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* Cursor-tracked highlight; JS sets --mx/--my on hover */
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      320px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(129, 140, 248, 0.15),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      100deg,
+      var(--color-nebula-300),
+      var(--color-violet-400) 48%,
+      var(--color-nebula-500)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Display headline used in the hero and section statements */
+  .display {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(129, 140, 248, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(129, 140, 248, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 15%, transparent 72%);
+    -webkit-mask-image: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      #000 15%,
+      transparent 72%
+    );
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.035);
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: #b9b9cf;
+    transition:
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+  .chip:hover {
+    border-color: rgba(129, 140, 248, 0.45);
+    background: rgba(129, 140, 248, 0.1);
+    color: var(--color-nebula-200);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, var(--color-nebula-500), var(--color-violet-600));
+    padding: 0.8rem 1.4rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 12px 34px -14px rgba(99, 102, 241, 0.95);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      filter 0.2s ease;
+  }
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 16px 44px -14px rgba(139, 92, 246, 0.95);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.8rem 1.4rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e6e6f0;
+    transition:
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      transform 0.2s ease;
+  }
+  .btn-ghost:hover {
+    border-color: rgba(129, 140, 248, 0.5);
+    background: rgba(129, 140, 248, 0.08);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(165, 180, 252, 0.7);
+  }
+
+  /* Numbered index label, e.g. "01" in a bordered square */
+  .index-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(129, 140, 248, 0.28);
+    background: rgba(129, 140, 248, 0.08);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-nebula-300);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

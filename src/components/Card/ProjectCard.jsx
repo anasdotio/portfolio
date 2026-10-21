@@ -1,6 +1,9 @@
-import { Bot, ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github, Sparkles } from "lucide-react";
+import SpotlightCard from "../ui/SpotlightCard";
+import Reveal from "../ui/Reveal";
 
 const ProjectCard = ({
+  number = "01",
   title,
   description,
   image,
@@ -8,81 +11,85 @@ const ProjectCard = ({
   github,
   demo,
   status,
-}) => {
-  return (
-    <article className="group mx-auto h-full w-full max-w-[420px] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/70 shadow-lg shadow-black/20 backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-yellow-400/40 hover:shadow-2xl hover:shadow-yellow-500/10">
-      <div className="relative h-56 overflow-hidden">
+  index = 0,
+}) => (
+  <Reveal delay={index * 0.1} className="h-full">
+    <SpotlightCard className="surface group flex h-full flex-col">
+      {/* preview */}
+      <div className="relative aspect-[16/10] overflow-hidden">
         {image ? (
           <img
             src={image}
-            alt={title}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            alt={`${title} preview`}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(248,143,34,0.16),transparent_35%),linear-gradient(135deg,#151515,#050505)]">
-            <Bot className="h-16 w-16 text-yellow-400/70 transition duration-500 group-hover:scale-110 group-hover:text-yellow-400" />
+          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(129,140,248,0.18),transparent_55%)]">
+            <Sparkles className="h-10 w-10 text-nebula-400/70" />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent" />
 
-        <div className={`absolute left-4 top-4 inline-flex items-center rounded-full border px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] backdrop-blur-sm ${
-          status
-            ? "border-yellow-400/40 bg-yellow-500/15 text-yellow-200"
-            : "border-yellow-400/30 bg-zinc-950/70 text-yellow-300"
-        }`}>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/25 to-transparent" />
+
+        <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-950/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-300 backdrop-blur-sm">
+          <span className="h-1 w-1 rounded-full bg-nebula-400" />
           {status || "Featured"}
-        </div>
+        </span>
       </div>
 
-      <div className="flex h-full flex-col gap-5 p-5">
-        <div className="space-y-2">
-          <h3 className="text-xl font-semibold tracking-tight text-white">
+      {/* body */}
+      <div className="flex flex-1 flex-col p-6 sm:p-7">
+        <div className="flex items-start gap-4">
+          <span className="index-num shrink-0">{number}</span>
+          <h3 className="text-lg font-semibold leading-snug tracking-tight text-white sm:text-xl">
             {title}
           </h3>
-          <p className="text-sm leading-relaxed text-gray-400">{description}</p>
         </div>
 
-        {tech?.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {tech.map((item, index) => (
-              <span
-                key={index}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-gray-200"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        )}
+        <p className="mt-4 text-sm leading-relaxed text-slate-400">
+          {description}
+        </p>
 
-        <div className="flex flex-wrap items-center justify-start gap-3 pt-1">
-          {github && !status && (
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {tech.map((item) => (
+            <li
+              key={item}
+              className="rounded-md border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 font-mono text-[11px] text-slate-400"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+          {github && (
             <a
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-yellow-400/30 bg-zinc-950/80 px-4 py-2 text-sm font-medium text-white shadow-sm shadow-black/30 transition hover:border-yellow-400/50 hover:bg-zinc-800/90"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 py-2 text-sm font-medium text-white transition-colors hover:border-nebula-500/45 hover:bg-nebula-500/10"
             >
               <Github className="h-4 w-4" />
               GitHub
             </a>
           )}
-
           {demo && (
             <a
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-4 py-2 text-sm font-medium text-zinc-950 transition hover:bg-yellow-300"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-nebula-500 to-violet-600 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              <ExternalLink className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4" />
               Live Demo
             </a>
           )}
         </div>
       </div>
-    </article>
-  );
-};
+    </SpotlightCard>
+  </Reveal>
+);
 
 export default ProjectCard;

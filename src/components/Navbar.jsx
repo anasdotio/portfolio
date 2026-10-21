@@ -1,82 +1,174 @@
-// eslint-disable-next-line no-unused-vars
-import { motion } from "motion/react";
-import MobileNavbar from "./Navbar/MobileNabar";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { Menu, X } from "lucide-react";
+import { navItems, profile, socials } from "../data/content";
 
 const Navbar = () => {
-  const navItems = [
-    {
-      id: 1,
-      name: "Home",
-      link: "#home",
-    },
-    {
-      id: 2,
-      name: "About",
-      link: "#about",
-    },
-    {
-      id: 3,
-      name: "Skills",
-      link: "#skill",
-    },
-    {
-      id: 4,
-      name: "Projects",
-      link: "#projects",
-    },
-    {
-      id: 5,
-      name: "Contact",
-      link: "#contact",
-    },
-  ];
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Compact the bar once the page moves, and lock scroll when the menu opens.
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+
+      // Scroll-spy: the current section is the last one whose heading has
+      // scrolled above the middle of the viewport. Measuring against the
+      // viewport (rather than offsetTop) keeps this correct regardless of
+      // how the sections are nested in the DOM.
+      const line = window.innerHeight * 0.35;
+      let current = navItems[0].id;
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top <= line) current = item.id;
+      }
+      setActive(current);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.6 } }}
-      className="mx-auto mt-6 w-full max-w-5xl rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 backdrop-blur-xl transition-colors duration-300"
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "border-b border-white/[0.07] bg-ink-950/80 backdrop-blur-xl"
+          : "border-b border-transparent"
+      }`}
     >
-      <div
-        className="hidden items-center justify-between gap-8 rounded-xl bg-zinc-950/80 px-5 py-3 text-white transition-colors duration-300 sm:flex"
-      >
-        <a href="#home" className="hidden items-center gap-2 text-sm font-semibold tracking-wide sm:flex">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-yellow-500 text-xs text-zinc-950">A</span>
-          Anas Khan
-        </a>
-        <div className="hidden items-center gap-8 sm:flex">
-        {navItems.map((item) => (
-          <div
-            key={item.id}
-            className="group relative h-6 min-w-fit cursor-pointer overflow-hidden"
-          >
-            {/* Normal Text */}
-            <span
-              className="
-                block text-sm text-white/60 transition-transform duration-300 group-hover:-translate-y-full
-              "
-            >
-              {item.name}
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+        <a
+          href="#home"
+          className="group flex items-center gap-3"
+          aria-label={`${profile.name} — home`}
+        >
+          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-nebula-500 to-violet-600 text-sm font-bold text-white shadow-lg shadow-nebula-600/30 transition-transform duration-300 group-hover:scale-105">
+            {profile.initials}
+          </span>
+          <span className="hidden sm:block">
+            <span className="block text-sm font-semibold leading-tight text-white">
+              {profile.name}
             </span>
+            <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
+              {profile.role}
+            </span>
+          </span>
+        </a>
 
-            {/* Hover Text */}
-            <a
-              href={item.link}
-              className="
-                block text-sm text-yellow-400 transition-transform duration-300 group-hover:-translate-y-full
-              "
-            >
-              {item.name}
-            </a>
-          </div>
-        ))}
+        <ul className="hidden items-center gap-1 md:flex">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className={`relative rounded-lg px-3.5 py-2 text-sm transition-colors duration-200 ${
+                  active === item.id
+                    ? "text-white"
+                    : "text-slate-400 hover:text-white"
+                }`}
+              >
+                {active === item.id && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 -z-10 rounded-lg border border-nebula-500/25 bg-nebula-500/10"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-3">
+          <a
+            href={profile.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary hidden !px-4 !py-2 !text-xs sm:inline-flex"
+          >
+            Resume
+          </a>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white transition-colors hover:border-nebula-500/40 md:hidden"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
-      </div>
+      </nav>
 
-      <div className="flex sm:hidden">
-        <MobileNavbar />
-      </div>
-    </motion.nav>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-white/[0.07] bg-ink-950/95 backdrop-blur-xl md:hidden"
+          >
+            <ul className="space-y-1 px-5 py-5">
+              {navItems.map((item, i) => (
+                <motion.li
+                  key={item.id}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.05 + i * 0.05 }}
+                >
+                  <a
+                    href={`#${item.id}`}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm transition-colors ${
+                      active === item.id
+                        ? "bg-nebula-500/10 text-white"
+                        : "text-slate-400"
+                    }`}
+                  >
+                    {item.label}
+                    <span className="font-mono text-[10px] text-slate-600">
+                      0{i + 1}
+                    </span>
+                  </a>
+                </motion.li>
+              ))}
+            </ul>
+            <div className="flex items-center gap-3 border-t border-white/[0.07] px-5 py-5">
+              <a
+                href={profile.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary flex-1 !py-2.5 !text-xs"
+              >
+                Download Resume
+              </a>
+              <a
+                href={socials[0].href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost !px-3 !py-2.5"
+                aria-label="GitHub"
+              >
+                GH
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 
