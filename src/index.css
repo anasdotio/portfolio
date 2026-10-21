@@ -216,22 +216,28 @@
   .masthead {
     --masthead: clamp(3.4rem, 18.5vw, 15rem);
     --portrait-at: 2.05;
-    --portrait-w: 1.28;
+    --portrait-w: 1.42;
     --portrait-aspect: 1.087;
     --portrait-eye: 0.329;
     --cap-mid: 0.392;
+    --portrait-shift: -0.40em;
     position: relative;
     font-size: var(--masthead);
   }
 
   .masthead__portrait {
     position: absolute;
+    z-index: 30;
     top: calc(
       var(--masthead) * var(--portrait-eye) * var(--portrait-aspect) -
-        var(--masthead) * var(--cap-mid)
+        var(--masthead) * var(--cap-mid) + var(--portrait-shift)
     );
     left: calc(var(--portrait-at) * 1em);
-    width: calc(var(--masthead) * var(--portrait-w));
+    width: min(
+      calc(var(--masthead) * var(--portrait-w)),
+      calc(100% - var(--portrait-at) * 1em)
+    );
+    max-width: 100%;
   }
 
   /* On a narrow screen the type is smaller, so the portrait is scaled up
@@ -239,9 +245,16 @@
   @media (max-width: 640px) {
     .masthead {
       --portrait-at: 2.06;
-      --portrait-w: 1.62;
+      --portrait-w: 1.76;
       --portrait-aspect: 1.087;
       --portrait-eye: 0.329;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .masthead {
+      --portrait-at: 1.98;
+      --portrait-w: 1.48;
     }
   }
 

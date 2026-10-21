@@ -69,7 +69,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, scale: 0.96, x: "-50%" }}
           animate={{ opacity: 1, scale: 1, x: "-50%" }}
           transition={{ duration: 0.9, delay: 0.22, ease }}
-          className="masthead__portrait pointer-events-none z-10"
+          className="masthead__portrait pointer-events-none z-30"
         >
           <div className="relative">
             <div className="absolute inset-x-8 top-0  h-36 bg-[radial-gradient(ellipse_55%_55%_at_50%_16%,rgba(204,143,44,0.34),transparent_70%)] blur-2xl" />
