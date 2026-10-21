@@ -36,6 +36,15 @@ export const profile = {
     width: 761,
     height: 827,
   },
+  // A tighter head crop for the phone hero, where the portrait stands on
+  // its own instead of dissolving into the wordmark. Same subject, cropped
+  // to the head with a short fade at the neck.
+  head: {
+    src: new URL("../assets/profile-head.png", import.meta.url).href,
+    alt: "Anas Khan",
+    width: 569,
+    height: 766,
+  },
 };
 
 export const socials = [

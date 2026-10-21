@@ -51,7 +51,7 @@ const Section = ({
             {statement.map((line, i) => (
               <span
                 key={line}
-                className={`block ${i > 0 ? "text-bone-600" : ""}`}
+                className={`block ${i > 0 ? "text-bone-650" : ""}`}
               >
                 {line}
               </span>

@@ -1,3 +1,4 @@
+import { MotionConfig } from "motion/react";
 import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import HeroSection from "./components/HeroSection";
@@ -13,25 +14,30 @@ import ClosingCta from "./components/ClosingCta";
 import Footer from "./components/Footer";
 
 const App = () => (
-  <div className="relative min-h-screen bg-ink-950 text-bone-200">
-    <Background />
-    <Navbar />
+  // The `prefers-reduced-motion` block in index.css only reaches CSS
+  // transitions and keyframes — Motion drives its own animations from JS,
+  // so it needs telling separately.
+  <MotionConfig reducedMotion="user">
+    <div className="relative min-h-screen bg-ink-950 text-bone-200">
+      <Background />
+      <Navbar />
 
-    <main>
-      <HeroSection />
-      <Marquee />
-      <About />
-      <Skill />
-      <ProjectSection />
-      <Process />
-      <Education />
-      <Toolbelt />
-      <ContactUs />
-      <ClosingCta />
-    </main>
+      <main>
+        <HeroSection />
+        <Marquee />
+        <About />
+        <Skill />
+        <ProjectSection />
+        <Process />
+        <Education />
+        <Toolbelt />
+        <ContactUs />
+        <ClosingCta />
+      </main>
 
-    <Footer />
-  </div>
+      <Footer />
+    </div>
+  </MotionConfig>
 );
 
 export default App;

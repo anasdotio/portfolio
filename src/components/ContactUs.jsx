@@ -34,9 +34,12 @@ const ContactUs = () => {
       title="Let's build something"
       description="Got a project, a role, or just want to talk backend? My inbox is open."
     >
+      {/* `min-w-0` on the items: a grid item defaults to `min-width: auto`,
+          so the longest email handle would otherwise set the track's
+          minimum width and push the page wider than a 320px viewport. */}
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
         {/* ---------- form ---------- */}
-        <Reveal>
+        <Reveal className="min-w-0">
           <SpotlightCard className="surface p-6 sm:p-8">
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -142,7 +145,7 @@ const ContactUs = () => {
         </Reveal>
 
         {/* ---------- direct channels ---------- */}
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} className="min-w-0">
           <SpotlightCard className="surface flex h-full flex-col p-6 sm:p-8">
             <h3 className="text-lg font-semibold text-bone-100">Get in touch</h3>
             <p className="mt-3 text-sm leading-relaxed text-bone-400">

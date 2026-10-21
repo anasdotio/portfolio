@@ -28,6 +28,9 @@
   --color-bone-400: #a9a294;
   --color-bone-500: #7d776c;
   --color-bone-600: #5c574f;
+  /* One step up from bone-600: the muted second line of a display
+     statement still has to clear 3:1 against the near-black ground. */
+  --color-bone-650: #6f695f;
 
   /* Ember — amber accent */
   --color-ember-200: #f6e3bd;
@@ -206,6 +209,10 @@
      scale, and the portrait is placed against it in `em` so the head
      lands on the same letters at every viewport width.
 
+     This composition needs a wide measure, so it only applies from
+     tablet up — the phone hero in HeroSection.jsx is a separate,
+     ordinary layout.
+
      --masthead    the display size
      --portrait-at the x of the head's centre
      --portrait-w  the cutout's width
@@ -240,23 +247,28 @@
     max-width: 100%;
   }
 
-  /* On a narrow screen the type is smaller, so the portrait is scaled up
-     against it to stay the same share of the composition. */
-  @media (max-width: 640px) {
-    .masthead {
-      --portrait-at: 2.06;
-      --portrait-w: 1.76;
-      --portrait-aspect: 1.087;
-      --portrait-eye: 0.329;
-    }
+  /* The phone hero's portrait. It is a head crop, so it is sized by its
+     own width and given a soft mask at the bottom so the neck dissolves
+     into the page rather than ending on a hard edge. The mask reaches
+     further down than the asset's own alpha fade so the two blend into
+     one smooth falloff. */
+  .hero-portrait {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0,
+      #000 62%,
+      rgba(0, 0, 0, 0.55) 84%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0,
+      #000 62%,
+      rgba(0, 0, 0, 0.55) 84%,
+      transparent 100%
+    );
   }
 
-  @media (max-width: 400px) {
-    .masthead {
-      --portrait-at: 1.98;
-      --portrait-w: 1.48;
-    }
-  }
 
   /* Display headline used in the hero and section statements */
   .display {
