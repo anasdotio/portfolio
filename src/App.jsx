@@ -9,6 +9,7 @@ import ProjectSection from "./components/ProjectSection";
 import Process from "./components/Process";
 import Education from "./components/Education";
 import Toolbelt from "./components/Toolbelt";
+import Certificates from "./components/Certificates";
 import ContactUs from "./components/ContactUs";
 import ClosingCta from "./components/ClosingCta";
 import Footer from "./components/Footer";
@@ -31,6 +32,7 @@ const App = () => (
         <Process />
         <Education />
         <Toolbelt />
+        <Certificates />
         <ContactUs />
         <ClosingCta />
       </main>

@@ -66,6 +66,7 @@ export const navItems = [
   { id: "projects", label: "Projects" },
   { id: "process", label: "Process" },
   { id: "journey", label: "Journey" },
+  { id: "certificates", label: "Certificates" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -176,6 +177,15 @@ export const toolbelt = [
   "Postman",
   "WebSocket",
   "JWT",
+];
+
+export const certificates = [
+  {
+    name: "Certificate of Completion",
+    issuer: "Udemy",
+    date: "Verified",
+    url: "https://www.udemy.com/certificate/UC-ff499121-c23b-4cf6-8c1a-de9b54689f50/",
+  },
 ];
 
 export const projects = [
